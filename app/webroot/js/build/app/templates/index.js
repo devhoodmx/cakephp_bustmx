@@ -1,0 +1,1 @@
+!function(a,b){"use strict";var c={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){var a=["log","error","success"];$("#widgets").on("click",".app-alertify",function(b){var c=a[Math.floor(3*Math.random())];b.preventDefault(),alertify[c](c)})},_onClick:function(){}};c.load(),a.hozen.app.IndexApp=c}(window,window.document);

@@ -1,0 +1,11 @@
+msgid	"code"
+msgstr	"Código"
+
+msgid	"parent-id"
+msgstr	"Pertenece a"
+
+msgid	"class"
+msgstr	"Ícono"
+
+msgid	"color"
+msgstr	"Color"

@@ -1,0 +1,49 @@
+msgid	"name"
+msgstr	"Nombre"
+
+msgid	"name-placeholder"
+msgstr	"Richard"
+
+msgid	"last-name"
+msgstr	"Apellidos"
+
+msgid	"last-name-placeholder"
+msgstr	"Feynman"
+
+msgid	"email"
+msgstr	"Correo electrónico"
+
+msgid	"email-placeholder"
+msgstr	"feynman@google.com"
+
+msgid	"phone"
+msgstr	"Teléfono"
+
+msgid	"phone-placeholder"
+msgstr	"999 2864419"
+
+msgid	"message"
+msgstr	"Déjanos un mensaje"
+
+msgid	"message-placeholder"
+msgstr	"..."
+
+msgid	"name-placeholder"
+msgstr	"Nombre*"
+
+msgid	"email-placeholder"
+msgstr	"Email*"
+
+msgid	"phone-placeholder"
+msgstr	"Teléfono*"
+
+msgid	"message-placeholder"
+msgstr	"Mensaje*"
+
+#new placeholder 
+
+msgid	"budget-placeholder"
+msgstr	"Presupuesto*"
+
+msgid	"document-placeholder"
+msgstr	"Curriculum*"

@@ -1,0 +1,26 @@
+@import '../../vendor/bootstrap-4/functions';
+@import '../../vendor/bootstrap-4/variables';
+@import '../../vendor/bootstrap-4/mixins';
+
+.configurations-table {
+	> tbody > tr:first-child > td {
+		border-top: 0;
+	}
+
+	.configuration-media {
+		width: 100%;
+		max-width: 160px;
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.configurations-table {
+		.configuration-name-col {
+			width: 220px;
+		}
+	}
+}

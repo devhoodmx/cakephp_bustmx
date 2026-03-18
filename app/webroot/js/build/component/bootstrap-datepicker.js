@@ -1,0 +1,1 @@
+!function(t,n){"use strict";var o={load:function(){$(n).ready($.proxy(this.init,this))},init:function(){var e=this;$.fn.datepicker&&$('[data-component="bootstrap-datepicker"]').each(function(t,n){var o=$(n);e.render(o)})},render:function(t){t.datepicker({autoclose:!0,clearBtn:!0,todayHighlight:!0})}};o.load(),t.hozen.component.BootstrapDatepicker=o}(window,window.document);

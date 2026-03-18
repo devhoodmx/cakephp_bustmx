@@ -1,0 +1,97 @@
+@import '../utility/base';
+
+.form-grid {
+	.grid-view {
+		// Rows
+		> thead > tr,
+		> tbody > tr {
+			border-bottom: 1px solid #DDE1E3;
+		}
+
+		// Cells
+		> thead > tr > th,
+		> thead > tr > td,
+		> tbody > tr > th,
+		> tbody > tr > td {
+			padding: 0;
+			border: none;
+			vertical-align: middle;
+
+			// Inputs
+			.form-group {
+				margin-bottom: 0;
+			}
+			.form-control {
+				padding-left: 6px;
+				padding-right: 6px;
+				border: 1px solid transparent;
+				border-radius: 0;
+
+				&:focus {
+					border-color: $java;
+				}
+
+				&.form-error {
+					border-color: $scarlet;
+					background: none;
+				}
+			}
+			// Select
+			.chosen-container {
+				&.chosen-container-active {
+					border-radius: 0;
+
+					.chosen-single {
+						border-color: $java;
+					}
+				}
+				&.form-error {
+					.chosen-single {
+						border-color: $scarlet;
+					}
+				}
+
+				.chosen-single {
+					max-width: 100px;
+					border: 1px solid transparent;
+					border-radius: 0;
+				}
+			}
+
+			.error-message {
+				display: none;
+			}
+
+			// Buttons
+			.btn {
+				outline: none;
+			}
+		}
+
+		> thead > tr > th {
+			padding: 6px;
+			background: #F5F5F5;
+		}
+		> tbody > tr > td {
+			border-left: 1px solid #F3F3F3;
+
+			&:first-child {
+				border-left: 0;
+			}
+		}
+
+		.actions {
+			padding-left: 6px;
+		}
+	}
+
+	.grid-toolbar {
+		display: flex;
+		justify-content: space-between;
+
+		.btn {
+			float: none;
+			margin: 0;
+		}
+	}
+}

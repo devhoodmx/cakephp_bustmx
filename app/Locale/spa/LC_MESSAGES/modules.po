@@ -1,0 +1,92 @@
+msgid	"user"
+msgstr	"Usuario"
+
+msgid	"users"
+msgstr	"Usuarios"
+
+msgid "module"
+msgstr "Módulo"
+
+msgid "modules"
+msgstr "Módulos"
+
+msgid	"role"
+msgstr	"Rol"
+
+msgid	"roles"
+msgstr	"Roles"
+
+msgid	"category"
+msgstr	"Categoría"
+
+msgid	"categories"
+msgstr	"Categorías"
+
+msgid	"web-pages"
+msgstr	"Páginas"
+
+msgid	"web-page"
+msgstr	"Página"
+
+msgid	"web-page-maps"
+msgstr	"Mapas"
+
+msgid	"web-page-map"
+msgstr	"Mapa"
+
+msgid	"web-page-seos"
+msgstr	"SEO"
+
+msgid	"web-page-seo"
+msgstr	"SEO"
+
+msgid	"menu-items"
+msgstr	"Menú"
+
+msgid	"web-page-element"
+msgstr	"Página"
+
+msgid	"menu-item"
+msgstr	"Elemento del menú"
+
+msgid	"galleries"
+msgstr	"Galerías"
+
+msgid	"gallery"
+msgstr	"Galería"
+
+msgid	"sections"
+msgstr	"Secciones"
+
+msgid	"section"
+msgstr	"Sección"
+
+msgid	"media-libraries"
+msgstr	"Biblioteca"
+
+msgid	"media-library"
+msgstr	"Carpeta"
+
+msgid	"plans"
+msgstr	"Planes"
+
+msgid	"plan"
+msgstr	"Plan"
+
+msgid	"reviews"
+msgstr	"Reviews"
+
+msgid	"review"
+msgstr	"Review"
+
+msgid	"request-vacancies"
+msgstr	"Solicitud de vacantes"
+
+msgid	"request-vacancy"
+msgstr	"Solicitud de vacante"
+
+msgid	"projects"
+msgstr	"Proyectos"
+
+msgid	"project"
+msgstr	"Proyecto"

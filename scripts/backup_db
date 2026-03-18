@@ -1,0 +1,35 @@
+#!/bin/bash
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+
+if [[ "$ROOT_DIR" = '' || "$ROOT_DIR" = '/' ]]; then
+	exit 1
+fi
+
+cd "$ROOT_DIR"
+
+set -e
+
+backup_path=~/backup
+
+if [[ -n "$1" ]]; then
+	backup_path="$1"
+fi
+
+webroot="$ROOT_DIR"
+date=$(date +%Y-%m-%d-%H%M)
+db_conf="$webroot/app/Config/database.php"
+db_user=$(sed -rn '/public \$default/,/\);/ s/.*login.\ +=>\ +.([^'\'']+).*/\1/p' "$db_conf")
+db_pass=$(sed -rn 's/.*password.\ +=>\ +.([^'\'']+).*/\1/p' "$db_conf" | head -1)
+db_name=$(sed -rn '/public \$default/,/\);/ s/.*database.\ +=>\ +.([^'\'']+).*/\1/p' "$db_conf")
+backup_name="$db_name-$date.sql.gz"
+backup_file="$backup_path/$backup_name"
+
+if [[ -z "$db_user" || -z "$db_name" ]]; then
+	echo "Could not extract db_user or db_name from $db_conf"
+	exit 1
+fi
+
+mkdir -p "$backup_path"
+mysqldump -u "$db_user" --password="$db_pass" --default-character-set=utf8 --triggers --routines --no-tablespaces "$db_name" | gzip -9 > "$backup_file"
+
+exit 0

@@ -1,0 +1,1 @@
+!function(a){"use strict";a.hozen.locale={word:"value","word-word":"value"}}(window,window.document);

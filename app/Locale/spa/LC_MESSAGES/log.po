@@ -1,0 +1,14 @@
+msgid	"user"
+msgstr	"Usuario"
+
+msgid	"model"
+msgstr	"Objeto"
+
+msgid	"name"
+msgstr	"Nombre"
+
+msgid	"action"
+msgstr	"Acción"
+
+msgid	"date"
+msgstr	"Fecha"

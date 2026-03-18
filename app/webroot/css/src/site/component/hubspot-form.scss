@@ -1,0 +1,32 @@
+@import '../utility/base';
+@import '../../vendor/bootstrap-4/functions';
+@import 'bootstrap-4/variables';
+@import '../../vendor/bootstrap-4/variables';
+@import '../../vendor/bootstrap-4/mixins';
+
+@import '../../component/hubspot-form';
+
+// See 'Styling forms' https://designers.hubspot.com/docs/cms/hubspot-form-markup#styling-forms
+.hs-form {
+	.hs-form-field {
+		> label {
+		}
+	}
+	.hs-input {
+		&::placeholder {
+		}
+
+		&:focus {
+			&::placeholder {
+			}
+		}
+	}
+
+	select {
+	}
+
+	.actions {
+	}
+	.hs-button {
+	}
+}

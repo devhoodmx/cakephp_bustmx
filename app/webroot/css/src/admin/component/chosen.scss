@@ -1,0 +1,119 @@
+$chosen-sprite: url('/img/vendor/chosen/chosen-sprite.png');
+$chosen-sprite-retina: url('/img/vendor/chosen/chosen-sprite@2x.png');
+
+@import '../../vendor/chosen/chosen';
+
+.chosen-container {
+	&.form-error {
+		.chosen-drop {
+			border-color: #FF211A;
+			box-shadow: inset 0 -1px 1px rgba(#000, 0.075), 0 6px 10px -3px rgba(#FF211A, 0.6);
+		}
+	}
+
+	.chosen-drop {
+		border-bottom-right-radius: 17px;
+		border-bottom-left-radius: 17px;
+		border-color: #11BDAE;
+		box-shadow: inset 0 -1px 1px rgba(#000, 0.075), 0 6px 10px -3px rgba(#11BDAE, 0.6);
+	}
+}
+
+.chosen-container-single {
+	&.form-error {
+		.chosen-single {
+			border-color: #FF211A;
+		}
+	}
+
+	.chosen-single {
+		height: 34px;
+		padding: 6px 13px;
+		border: 1px solid #ccc;
+		border-radius: 34px;
+		box-shadow: inset 0 0 1px rgba(#000, 0.075);
+		background-color: #fff;
+		background-image: none;
+		line-height: 1.428571429;
+		font-size: 14px;
+		color: #333;
+		transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+	}
+
+	.chosen-single div {
+		b {
+			background-position: 0 6px;
+		}
+	}
+}
+
+.chosen-container-active {
+	border-radius: 34px;
+	box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba(#11BDAE, 0.6);
+
+	&.form-error {
+		box-shadow: inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba(#FF211A, 0.6);
+	}
+
+	.chosen-single {
+		border-radius: 34px;
+		background-image: none;
+		border-color: #11BDAE;
+	}
+
+	.chosen-choices {
+		border-color: #11BDAE;
+	}
+
+	&.chosen-with-drop {
+		&.form-error {
+			.chosen-single {
+				border-color: #FF211A;
+			}
+		}
+
+		.chosen-single {
+			border-radius: 17px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+			background-image: none;
+			border-color: #11BDAE;
+		}
+
+		.chosen-single div {
+			b {
+				background-position: -18px 6px;
+			}
+		}
+
+		.chosen-choices {
+			border-color: #11BDAE;
+			border-radius: 17px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+}
+
+.chosen-container-multi {
+	border-radius: 34px;
+	border-color: #11BDAE;
+
+	&.form-error {
+		.chosen-choices {
+			border-color: #FF211A;
+		}
+	}
+
+	.chosen-choices {
+		padding: 2.5px 13px;
+		font-size: 14px;
+		line-height: 1.428571429;
+		color: #333;
+		background-color: #fff;
+		background-image: none;
+		border-color: #ccc;
+		border-radius: 34px;
+		box-shadow: inset 0 0 1px rgba(#000, 0.075);
+	}
+}

@@ -1,0 +1,75 @@
+//
+// Panels
+// --------------------------------------------------
+
+
+// Base class
+.panel {
+	overflow: hidden;
+	@include box-shadow(none);
+}
+
+.panel {
+	&.overflow-visible {
+		overflow: visible
+	}
+}
+
+.panel-heading {
+	.panel-header-action-links {
+		a {
+			margin-right: 21px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+
+// Custom
+// ----------------------
+
+// Panel items
+.panel-items {
+	list-style: none;
+	margin: -15px;
+	padding: 0;
+
+	&.panel-items-hover {
+		.panel-item:hover {
+			background-color: $black-haze;
+			cursor: pointer;
+		}
+	}
+
+	&.panel-items-no-border {
+		.panel-item {
+			border-top: none;
+		}
+	}
+}
+.panel-item {
+	border-top:1px solid $gray;
+	padding: 9px;
+
+	&:first-child {
+		border-top: none;
+	}
+
+	&.media {
+		margin-top: 0;
+	}
+
+	.panel-item-icon,
+	.avatar-user {
+		@include border-radius(48px);
+	}
+	.panel-item-icon {
+		background: $aqua-squeeze;
+		color: $java;
+		display: inline-block;
+		padding: 9px 6px 10px;
+	}
+}

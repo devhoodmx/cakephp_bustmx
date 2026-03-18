@@ -1,0 +1,29 @@
+msgid	"password"
+msgstr	"Contraseña"
+
+msgid	"password-confirmation"
+msgstr	"Confirmar contraseña"
+
+msgid	"current-password"
+msgstr	"Contraseña actual"
+
+msgid	"email"
+msgstr	"Correo electrónico"
+
+msgid	"email-short"
+msgstr	"Correo"
+
+msgid	"bio"
+msgstr	"Bio"
+
+msgid	"active"
+msgstr	"Activar al usuario"
+
+msgid	"last-login"
+msgstr	"Último acceso"
+
+msgid	"role-id"
+msgstr	"Rol"
+
+msgid	"profile-picture"
+msgstr	"Foto de perfil"

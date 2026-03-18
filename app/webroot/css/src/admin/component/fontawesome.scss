@@ -1,0 +1,20 @@
+@import '../utility/base';
+@import '../../vendor/font-awesome-5/variables';
+
+@mixin icon-toggle($value, $weight: 900) {
+	font-weight: $weight;
+
+	&:before {
+		content: fa-content($value);
+	}
+}
+
+.fa-audio:before { content: fa-content($fa-var-music); }
+.fa-svg:before { content: fa-content($fa-var-vector-square); }
+
+.icon-main { @include icon-toggle($fa-var-star);}
+.icon-not-main { @include icon-toggle($fa-var-star, 400); }
+.icon-active, .icon-published, .icon-not-hidden { @include icon-toggle($fa-var-eye, 400); }
+.icon-not-active, .icon-not-published, .icon-hidden { @include icon-toggle($fa-var-eye-slash, 400); }
+.icon-shared { @include icon-toggle($fa-var-toggle-on); color: $green;}
+.icon-not-shared { @include icon-toggle($fa-var-toggle-off); color: $gray;}

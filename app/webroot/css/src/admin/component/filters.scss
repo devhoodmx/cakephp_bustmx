@@ -1,0 +1,46 @@
+@import '../utility/base';
+
+$sizes: 100, 120, 140;
+
+@media (min-width: 768px) {
+	.filters-component {
+		> .filters-form {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			.filter {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 170px;
+				margin-right: 5px;
+				margin-bottom: 0;
+
+				&[class*='filter-w-'] {
+					flex-grow: 0;
+					flex-shrink: 0;
+					max-width: none;
+				}
+			}
+			// Sizes
+			@each $size in $sizes {
+				.filter-w-#{$size} {
+					flex-basis: #{$size}px;
+					width: #{$size}px;
+				}
+			}
+
+			.actions {
+				flex-grow: 0;
+
+				.btn {
+					margin-right: 3px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}

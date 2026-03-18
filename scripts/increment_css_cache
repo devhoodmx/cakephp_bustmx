@@ -1,0 +1,14 @@
+#!/bin/bash
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+
+if [[ "$ROOT_DIR" = '' || "$ROOT_DIR" = '/' ]]; then
+	exit 1
+fi
+
+cd "$ROOT_DIR"
+
+set -e
+
+sed -i.backup -r -e "/'css' => array/,/\)/ s/^([^']+'version' => )([0-9]+)/"'echo "\1$((\2+1))"/ge' app/Config/config.php
+
+exit 0

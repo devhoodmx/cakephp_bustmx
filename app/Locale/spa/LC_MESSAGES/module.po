@@ -1,0 +1,8 @@
+msgid	"model"
+msgstr	"Modelo"
+
+msgid	"url"
+msgstr	"URL"
+
+msgid	"category-id"
+msgstr	"Categoría"

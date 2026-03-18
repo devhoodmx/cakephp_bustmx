@@ -1,0 +1,38 @@
+#!/bin/bash
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+
+if [[ "$ROOT_DIR" = '' || "$ROOT_DIR" = '/' ]]; then
+	exit 1
+fi
+
+cd "$ROOT_DIR"
+
+set -e
+
+title=$1
+subtitle=$2
+
+if [ -z "$title" ]; then
+	echo "No title provided"
+	echo "Try ./scripts/create_struct_modification companies"
+	exit
+fi
+
+
+timestamp="$(date +%Y%m%d%H%M%S)"
+filename="$timestamp-$title"
+filedir='app/Config/Schema/struct/modifications'
+filepath=''
+
+if [ -n "$subtitle" ]; then
+	filename="$filename-$subtitle"
+fi
+
+filepath="$filedir/$filename.sql"
+
+# Create modification
+echo "File $filename.sql created on $filedir"
+
+touch "$ROOT_DIR/$filepath"
+
+exit 0

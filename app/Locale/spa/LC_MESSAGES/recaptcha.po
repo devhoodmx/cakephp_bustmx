@@ -1,0 +1,11 @@
+msgid	"missing-input-secret"
+msgstr	"Proporciona la llave secreta"
+
+msgid	"invalid-input-secret"
+msgstr	"La llave secreta proporcionada es incorrecta"
+
+msgid	"missing-input-response"
+msgstr	"Completa el reto"
+
+msgid	"invalid-input-response"
+msgstr	"La respuesta proporcionada es incorrecta"

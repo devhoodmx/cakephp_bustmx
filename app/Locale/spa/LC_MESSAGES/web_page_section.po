@@ -1,0 +1,29 @@
+msgid	"centered"
+msgstr	"Centrar contenido"
+
+msgid	"offset"
+msgstr	"Desfasar contenido"
+
+msgid	"padded"
+msgstr	"Añadir relleno"
+
+msgid	"spaced"
+msgstr	"Añadir margen inferior"
+
+msgid	"min-height"
+msgstr	"Altura mínima"
+
+msgid	"background-color"
+msgstr	"Color de fondo"
+
+msgid	"styles"
+msgstr	"Estilos CSS"
+
+msgid	"styles-help"
+msgstr	"Inserta estilos en el atributo html 'style' de la sección"
+
+msgid	"class"
+msgstr	"Clases"
+
+msgid	"class-help"
+msgstr	"Lista de clases separadas por espacio. Puedes usarlas para aplicar estilos a la sección"

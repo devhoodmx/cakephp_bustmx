@@ -1,0 +1,14 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+
+.progress {
+	height: 8px;
+	margin-bottom: 8px;
+	@include box-shadow(none);
+}
+
+.progress-bar {
+	@include box-shadow(none);
+}

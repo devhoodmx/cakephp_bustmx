@@ -1,0 +1,44 @@
+msgid	"name"
+msgstr	"Título"
+
+msgid	"key"
+msgstr	"Ruta"
+
+msgid	"meta-tags"
+msgstr	"Código HTML"
+
+msgid	"parent-id"
+msgstr	"Esta página pertenece a"
+
+msgid	"user-id"
+msgstr	"Autor"
+
+msgid	"created"
+msgstr	"Creada el"
+
+msgid	"active"
+msgstr	"Publicar la página"
+
+msgid	"not-active-notification"
+msgstr	"La página <strong>%s</strong> se ha ocultado"
+
+msgid	"active-notification"
+msgstr	"La página <strong>%s</strong> se ha publicado"
+
+msgid	"locale-es"
+msgstr	"Español"
+
+msgid	"locale-en"
+msgstr	"Inglés"
+
+msgid	"placeholder-key-es"
+msgstr	"nosotros"
+
+msgid	"placeholder-key-en"
+msgstr	"about-us"
+
+msgid	"active-dialog"
+msgstr	"¿Deseas publicar la página %s?"
+
+msgid	"not-active-dialog"
+msgstr	"¿Deseas ocultar la página %s?"

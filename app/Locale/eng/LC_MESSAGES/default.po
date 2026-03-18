@@ -1,0 +1,106 @@
+## General
+msgid	"page-title"
+msgstr	"%s | %s"
+
+msgid	"add-module"
+msgstr	"Add %s"
+
+msgid "add-submodule"
+msgstr "Add submodule of %s"
+
+msgid	"empty-list"
+msgstr	"Nothing found."
+
+msgid 	"no"
+msgstr	"No"
+
+msgid	"yes"
+msgstr 	"Yes"
+
+msgid	"dashboard"
+msgstr 	"Dashboard"
+
+## Actions
+msgid	"add"
+msgstr	"Add"
+
+msgid	"cancel"
+msgstr	"Cancel"
+
+msgid	"edit"
+msgstr	"Edit"
+
+msgid	"delete"
+msgstr	"Delete"
+
+msgid	"save"
+msgstr	"Save"
+
+msgid	"main"
+msgstr	"Main"
+
+msgid	"publish"
+msgstr	"Publish"
+
+msgid	"save-and-publish"
+msgstr	"Save and publish"
+
+## Dialogs
+msgid "active-dialog-title"
+msgstr "Activate"
+
+msgid "not-active-dialog-title"
+msgstr "Deactivate"
+
+msgid "active-dialog"
+msgstr "Set %s as active?"
+
+msgid "not-active-dialog"
+msgstr "Set %s as inactive?"
+
+msgid "delete-dialog"
+msgstr "Do you want to delete %s?"
+
+msgid "publish-dialog"
+msgstr "Do you want to publish %s?"
+
+msgid "not-publish-dialog"
+msgstr "Do you want to hide %s?"
+
+msgid "main-dialog-title"
+msgstr "Set as main"
+
+msgid "not-main-dialog-title"
+msgstr "Unset main"
+
+msgid "main-dialog"
+msgstr "Set %s as main?"
+
+msgid "not-main-dialog"
+msgstr "Unset %s as main?"
+
+## Notifications
+msgid "delete-notification"
+msgstr "%s has been deleted"
+
+## Pagination
+msgid	"paginate-counter"
+msgstr	"{:start} - {:end} de {:count}"
+
+msgid	"previous"
+msgstr	"Previous"
+
+msgid	"next"
+msgstr	"Next"
+
+msgid	"first-page"
+msgstr	"First page"
+
+msgid	"last-page"
+msgstr	"Last page"
+
+msgid	"items-per-page"
+msgstr	"Items per page"
+
+msgid	"go-to"
+msgstr	"Go to"

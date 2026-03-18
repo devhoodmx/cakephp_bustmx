@@ -1,0 +1,312 @@
+//
+// Forms
+// ----------------------------------------------------------------------------
+
+
+input[type='radio'],
+input[type='checkbox'] {
+	left: -9999px;
+	position: absolute;
+	@include opacity(0);
+
+	+ label {
+		background: transparent image-url('admin/sprite-radio-select.png') no-repeat 0 0;
+		margin-right: 10px;
+		padding: {
+			left: 24px;
+			top: 1px;
+		}
+	}
+}
+
+// Radio
+input[type='radio'] {
+	// Focus
+	&:focus + label {
+		background-position: 0 -500px;
+	}
+
+	// Checked
+	&:checked + label {
+		background-position: 0 -1000px;
+	}
+
+	// Focus + Checked
+	&:focus:checked +label {
+		background-position: 0 -1500px;
+	}
+
+	// Disabled
+	&:disabled + label {
+		background-position: 0 -5500px;
+	}
+
+	// Disabled + Checked
+	&:disabled:checked + label {
+		background-position: 0 -6000px;
+	}
+}
+
+// Checkbox
+input[type= 'checkbox'] {
+	+ label {
+		background-position: 0 -2000px;
+	}
+
+	// Focus
+	&:focus + label {
+		background-position: 0 -2500px;
+	}
+
+	// Checked
+	&:checked + label {
+		background-position: 0 -3000px;
+	}
+
+	// Focus + Checked
+	&:focus:checked +label {
+		background-position: 0 -3500px;
+	}
+
+	// Indeterminated
+	&:indeterminate + label {
+		background-position: 0 -4000px;
+	}
+
+	// Disabled
+	&:disabled + label {
+		background-position: 0 -4500px;
+	}
+
+	// Disabled + Checked
+	&:disabled:checked + label {
+		background-position: 0 -5000px;
+	}
+}
+
+// File
+input[type='file'] {
+	border: none;
+	height: auto;
+}
+
+// Textarea
+textarea.form-control {
+	border-radius: 16px;
+}
+
+
+// Common
+
+.input {
+	.success-message,
+	.warning-message,
+	.error-message {
+		margin-top: 5px;
+		font-size: 13px;
+	}
+
+	.success-message {
+		color: $apple;
+	}
+	.warning-message {
+		color: $tangerine;
+	}
+	.error-message {
+		color: $scarlet;
+	}
+}
+.form-control {
+	@include box-shadow(none);
+}
+
+
+// Checkboxes and radios
+
+.radio,
+.checkbox {
+	margin-top: 0;
+
+	&.form-group {
+		margin-bottom: $form-group-margin-bottom;
+	}
+
+	label.control-label {
+		display: inline-block;
+		font-weight: bold;
+		margin-bottom: 5px;
+		padding-left: 0;
+	}
+}
+
+.input {
+	// Time
+	&.time {
+		.control-label {
+			display: block;
+		}
+		.form-control {
+			display: inline-block;
+			width: auto;
+		}
+	}
+
+	// Color
+	&.color {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: flex-end;
+
+		.form-control {
+			width: 40px;
+			margin-right: 10px;
+			padding: 3px;
+			border-radius: 4px;
+		}
+	}
+}
+
+// Form control feedback states
+//
+// Apply contextual and semantic values to individual form controls.
+
+.error .help-block {
+	margin-bottom: 0;
+}
+
+.text,
+.file,
+.email,
+.number,
+.tel,
+.textarea {
+	.form-success,
+	.form-error,
+	.form-warning {
+		background: {
+			image: image-url('admin/sprite-form.png');
+			repeat: no-repeat;
+		};
+		padding-right: 32px;
+	}
+
+	.form-error {
+		background-position: right -494px;
+		border-color: $scarlet;
+
+		// Customize the `:focus` state
+		@include form-control-focus($scarlet);
+	}
+	.form-success {
+		background-position: right 8px;
+		border-color: $apple;
+
+		// Customize the `:focus` state
+		@include form-control-focus($apple);
+	}
+	.form-warning {
+		background-position: right -994px;
+		border-color: $tangerine;
+
+		// Customize the `:focus` state
+		@include form-control-focus($tangerine);
+	}
+}
+
+.select {
+	.form-error {
+		border-color: $scarlet;
+
+		// Customize the `:focus` state
+		@include form-control-focus($scarlet);
+	}
+}
+
+select {
+	&.form-control {
+		@include border-radius(0);
+		&[multiple] {
+			padding: 5px;
+			@include border-radius(5px);
+		}
+	}
+}
+
+// Help text
+//
+// Apply to any element you wish to create light text for placement immediately
+// below a form control. Use for general help, formatting, or instructional text.
+
+.help-block {
+	font-size: 12px;
+}
+
+.form-horizontal {
+	.radio {
+		margin-bottom: 15px;
+		padding: {
+			left: 0;
+			top: 0;
+		}
+		position: relative;
+
+		// Main label
+		.control-label {
+			font-weight: bold;
+			padding-top: 0;
+		}
+	}
+
+	// Feedback messages
+	// General styles
+	.success-message,
+	.error-message,
+	.warning-message {
+		margin-left: 25%;
+		padding: {
+			left: 10px;
+			right: 10px;
+		}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		.control-label {
+			padding-top: 7px;
+		}
+	}
+}
+
+// Fancy edu input file
+.fancy-input-file {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	vertical-align: top;
+
+
+	.btn-toolbar & {
+		float: left;
+	}
+
+	.form-group {
+		margin-bottom: 0;
+	}
+	input {
+		position: absolute;
+		@include opacity(0);
+
+		@include fancy-button-variant($btn-default-color, $btn-default-bg, $btn-default-border, '.fancy-btn', '.btn-default');
+
+		@include fancy-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border, '.fancy-btn', '.btn-primary');
+
+		@include fancy-button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border, '.fancy-btn', '.btn-warning');
+
+		@include fancy-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border, '.fancy-btn', '.btn-danger');
+
+		@include fancy-button-variant($btn-success-color, $btn-success-bg, $btn-success-border, '.fancy-btn', '.btn-success');
+
+		@include fancy-button-variant($btn-info-color, $btn-info-bg, $btn-info-border, '.fancy-btn', '.btn-info');
+	}
+}

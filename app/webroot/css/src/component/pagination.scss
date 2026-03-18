@@ -1,0 +1,44 @@
+@import '../vendor/bootstrap-4/functions';
+@import '../vendor/bootstrap-4/variables';
+@import '../vendor/bootstrap-4/mixins';
+@import '../utility/functions';
+
+.pagination-component {
+	display: flex;
+
+	// Pagination
+	.pagination {
+	}
+	.page-link {
+	}
+	.page-item {
+		span {
+			display: block;
+			padding: $pagination-padding-y $pagination-padding-x;
+			margin-left: -$pagination-border-width;
+			line-height: $pagination-line-height;
+			color: $pagination-color;
+			background-color: $pagination-bg;
+			border: $pagination-border-width solid $pagination-border-color;
+		}
+
+		&.active span {
+			z-index: 3;
+			color: $pagination-active-color;
+			background-color: $pagination-active-bg;
+			border-color: $pagination-active-border-color;
+		}
+	}
+	.page-prev,
+	.page-next {
+		&.disabled {
+		}
+	}
+	.page-prev {
+	}
+	.page-next {
+	}
+}
+
+@include media-breakpoint-up(lg) {
+}

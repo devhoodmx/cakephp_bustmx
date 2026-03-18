@@ -1,0 +1,24 @@
+// Placeholder
+@mixin placeholder {
+	&::-webkit-input-placeholder { // Safari and Chrome
+		@content;
+	}
+	&:-moz-placeholder { // Firefox 4-18
+		@content;
+	}
+	&::-moz-placeholder { // Firefox 19+
+		@content;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder { // Internet Explorer 10+
+		@content;
+	}
+}
+
+@mixin reset-box-sizing {
+	@include box-sizing(content-box);
+
+	*, *:before, *:after {
+		@include box-sizing(content-box);
+	}
+}

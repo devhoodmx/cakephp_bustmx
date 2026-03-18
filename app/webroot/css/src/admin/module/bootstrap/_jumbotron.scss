@@ -1,0 +1,13 @@
+//
+// Jumbotron
+// --------------------------------------------------
+
+
+.jumbotron {
+	margin-bottom: 30px;
+
+	.container &,
+	.container-fluid & {
+		@include border-radius(12px);
+	}
+}

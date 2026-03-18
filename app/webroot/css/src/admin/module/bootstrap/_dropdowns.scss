@@ -1,0 +1,62 @@
+//
+// Dropdown menus
+// --------------------------------------------------
+
+
+// Active state
+.dropdown-menu > .active > a {
+	&,
+	&:hover,
+	&:focus {
+		font-weight: bold;
+	}
+
+	&:hover {
+		background-color: $black-haze;
+	}
+}
+
+// Custom
+.dropdown-arrow-skin {
+	&.dropdown-menu {
+		margin-top: 8px;
+	}
+
+	&:before {
+		border: {
+			color: transparent;
+			style: solid;
+			width: 6px;
+			bottom-color: $gray;
+		}
+		content: '';
+		left: 10px;
+		position: absolute;
+		top: -12px;
+	}
+
+	&:after {
+		border: {
+			color: transparent;
+			style: solid;
+			width: 6px;
+			bottom-color: $white;
+		}
+		content: '';
+		left: 10px;
+		position: absolute;
+		top: -11px;
+	}
+
+	&.dropdown-menu-right {
+		&:before {
+			left: auto;
+			right: 10px;
+		}
+
+		&:after {
+			left: auto;
+			right: 10px;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+@import '../vendor/bootstrap-4/functions';
+@import '../vendor/bootstrap-4/variables';
+@import '../vendor/bootstrap-4/mixins';
+@import '../utility/functions';
+
+.nav-component {
+	&.separator {
+		flex-wrap: wrap;
+
+		> .nav-item {
+			display: flex;
+			align-items: center;
+			margin-right: rem(5);
+
+			.nav-option {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			&:after {
+				content: attr(data-separator);
+				margin-left: rem(5);
+			}
+
+			&:last-child {
+				margin-right: 0;
+
+				&:after {
+					content: '';
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}

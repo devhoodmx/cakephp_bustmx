@@ -1,0 +1,1 @@
+.pagination-component{display:-ms-flexbox;display:flex}.pagination-component .page-item span{display:block;padding:.5rem .75rem;margin-left:-1px;line-height:1.25;color:#007bff;background-color:#fff;border:1px solid #dee2e6}.pagination-component .page-item.active span{z-index:3;color:#fff;background-color:#007bff;border-color:#007bff}

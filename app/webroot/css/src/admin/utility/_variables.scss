@@ -1,0 +1,74 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+
+// Basics
+$black: #000;
+$blue: #00F;
+$gray: #CCC;
+$green: #0F0;
+$red: #F00;
+$white: #FFF;
+
+// Gray
+$alto: #DDD;
+$black-haze: #F3F5F5;
+$boulder: #777;
+$concrete: #F2F2F2;
+$dove-gray: #676767;
+$mercury: #E6E6E6;
+$mine-shaft: #333;
+$porcelain: #E1E8E8;
+$silver: #BABABA;
+$dusty-gray: #999999;
+$gallery: #EEEEEE;
+
+// Blue
+$aqua-squeeze: #E3F2F0;
+$blue-chill: #0D9186;
+$catskill-white: #EDF5F7;
+$cerulean: #00ABDE;
+$iceberg: #E0F1F6;
+$java: #11BDAE;
+$link-water: #E1F2F7;
+$sinbad: #AED9D4;
+$ziggurat: #B5D6E0;
+
+// Green
+$apple: #32D032;
+$frostee: #EDF9ED;
+$ottoman: #EEFAEE;
+$sea-mist: #CCE0CC;
+$surf-crest: #DCEBDC;
+
+// Red
+$dawn-pink: #F5EBEB;
+$pot-pourri: #F5E2E2;
+$scarlet: #FF211A;
+$shilo: #E8ADAC;
+$thunderbird: #BE1812;
+
+// Yellow
+$pancho: #F0D2A8;
+$sazerac: #FFF2E0;
+$serenade: #FFF6EB;
+$tangerine: #F08F05;
+$lightning-yellow: #FFC61F;
+
+$colors: (
+	'java': $java,
+	'apple': $apple,
+	'cerulean': $cerulean,
+	'tangerine': $tangerine,
+	'scarlet': $scarlet
+);
+
+//== Layout
+//
+
+$doc-section-margin: 20px;
+$doc-nav-width: 210px;

@@ -1,0 +1,1 @@
+!function(i,o,e){"use strict";var d={load:function(){$(o).ready($.proxy(this.init,this))},init:function(){$("video").on("play",$.proxy(this.mediaPlayed,this))},mediaPlayed:function(i){var o=$(i.target);$("video").addClass("stopped"),o.removeClass("stopped"),$("video.stopped").trigger("pause")}};d.load(),i.hozen.app.VideosApp=d}(window,window.document);

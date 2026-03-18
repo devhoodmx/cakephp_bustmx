@@ -1,0 +1,1 @@
+!function(a,b){"use strict";var c={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){}};c.load(),a.hozen.view.AnonymousView=c}(window,window.document);

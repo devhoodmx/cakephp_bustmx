@@ -1,0 +1,278 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$brand-primary: $aqua-squeeze;
+$brand-success: $ottoman;
+$brand-info: $link-water;
+$brand-warning: $sazerac;
+$brand-danger: $pot-pourri;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+$body-bg: transparent;
+
+$link-color: $java;
+$link-hover-color: $blue-chill;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: Roboto, Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 14px;
+
+$font-size-h1: ceil($font-size-base * 2.71); // ~38px
+$font-size-h2: ceil($font-size-base * 2.28); // ~32px
+
+$headings-font-family: $font-family-base;
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-horizontal: 13px;
+
+$padding-large-horizontal: 16px;
+
+$padding-xs-horizontal: 8px;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight: 500;
+
+$btn-default-color: $dove-gray;
+$btn-default-bg: $white;
+$btn-default-border: $silver;
+
+$btn-primary-color: $java;
+$btn-primary-bg: $aqua-squeeze;
+$btn-primary-border: $sinbad;
+
+$btn-success-color: $apple;
+$btn-success-bg: $ottoman;
+$btn-success-border: $sea-mist;
+
+$btn-info-color: $cerulean;
+$btn-info-bg: $link-water;
+$btn-info-border: $ziggurat;
+
+$btn-warning-color: $tangerine;
+$btn-warning-bg: $sazerac;
+$btn-warning-border: $pancho;
+
+$btn-danger-color: $scarlet;
+$btn-danger-bg: $pot-pourri;
+$btn-danger-border: $shilo;
+
+$btn-border-radius-base: 34px;
+$btn-border-radius-large: 46px;
+$btn-border-radius-small: 30px;
+
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+$dropdown-link-hover-color: $java;
+$dropdown-link-hover-bg: $black-haze;
+
+$dropdown-link-active-color: $java;
+$dropdown-link-active-bg: $white;
+
+
+//-- Z-index master list
+
+$zindex-dropdown: 1010;
+
+
+//== Type
+//
+//##
+
+$text-muted: $dusty-gray;
+
+
+//== Forms
+//
+//##
+
+$input-color: $mine-shaft;
+
+$input-border-radius: 34px;
+$input-border-focus: $java;
+
+$input-color-placeholder: $silver;
+
+$form-group-margin-bottom: 20px;
+
+
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+$nav-link-hover-bg: $black-haze;
+
+//== Tabs
+$nav-tabs-border-color: $alto;
+
+$nav-tabs-link-hover-border-color: transparent;
+
+$nav-tabs-active-link-hover-bg: $white;
+$nav-tabs-active-link-hover-color: $mine-shaft;
+
+
+//== Jumbotron
+//
+//##
+
+$jumbotron-padding: 12px;
+$jumbotron-bg: $black-haze;
+
+
+//== Labels
+//
+//##
+
+$label-default-bg: $dove-gray;
+$label-primary-bg: $java;
+$label-success-bg: $apple;
+$label-info-bg: $cerulean;
+$label-warning-bg: $tangerine;
+$label-danger-bg: $scarlet;
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+$alert-padding: 17px;
+$alert-border-radius: 30px;
+$alert-link-font-weight: 500;
+
+$alert-success-bg: $surf-crest;
+$alert-success-text: $apple;
+$alert-success-border: $surf-crest;
+
+$alert-info-bg: $catskill-white;
+$alert-info-text: $cerulean;
+$alert-info-border: $catskill-white;
+
+$alert-warning-bg: $serenade;
+$alert-warning-text: $tangerine;
+$alert-warning-border: $serenade;
+
+$alert-danger-bg: $dawn-pink;
+$alert-danger-text: $scarlet;
+$alert-danger-border: $dawn-pink;
+
+
+//== Progress bars
+//
+//##
+
+$progress-bg: $gallery;
+
+$progress-bar-bg: $dove-gray;
+$progress-bar-success-bg: $apple;
+$progress-bar-warning-bg: $tangerine;
+$progress-bar-danger-bg: $scarlet;
+$progress-bar-info-bg: $cerulean;
+
+
+//== Panels
+//
+//##
+
+$panel-heading-padding: 14px 15px;
+$panel-border-radius: 12px;
+
+$panel-default-text: $mine-shaft;
+$panel-default-border: $gray;
+$panel-default-heading-bg: $black-haze;
+
+$panel-primary-text: $java;
+$panel-primary-border: $sinbad;
+$panel-primary-heading-bg: $aqua-squeeze;
+
+$panel-success-text: $apple;
+$panel-success-border: $sea-mist;
+$panel-success-heading-bg: $ottoman;
+
+$panel-info-text: $cerulean;
+$panel-info-border: $ziggurat;
+$panel-info-heading-bg: $link-water;
+
+$panel-warning-text: $tangerine;
+$panel-warning-border: $pancho;
+$panel-warning-heading-bg: $sazerac;
+
+$panel-danger-text: $scarlet;
+$panel-danger-border: $shilo;
+$panel-danger-heading-bg: $pot-pourri;
+
+
+//== Wells
+//
+//##
+
+$well-bg: $black-haze;
+$well-border: $gray;
+
+
+//== Badges
+//
+//##
+
+$badge-bg: $silver;
+$badge-default-bg: $dove-gray;
+$badge-primary-bg: $java;
+$badge-success-bg: $apple;
+$badge-info-bg: $cerulean;
+$badge-warning-bg: $tangerine;
+$badge-danger-bg: $scarlet;
+
+
+//== Close
+//
+//##
+
+$close-color: $mine-shaft;
+
+
+//== Callouts
+//
+//##
+
+$callout-default-bg: $black-haze;
+$callout-default-border: $mercury;
+
+$callout-primary-bg: $aqua-squeeze;
+$callout-primary-border: $sinbad;
+
+$callout-success-bg: $surf-crest;
+$callout-success-border: $sea-mist;
+
+$callout-info-bg: $catskill-white;
+$callout-info-border: $ziggurat;
+
+$callout-warning-bg: $serenade;
+$callout-warning-border: $pancho;
+
+$callout-danger-bg: $dawn-pink;
+$callout-danger-border: $shilo;

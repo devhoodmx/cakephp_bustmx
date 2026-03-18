@@ -1,0 +1,123 @@
+# =============================================
+# CakePHP 2.x - bustmx
+# =============================================
+
+# ----- Configuración sensible -----
+app/Config/database.php
+app/Config/database.php.backup
+app/Config/config.php
+app/Config/config.php.backup
+app/Config/email.php
+
+# ----- Cache de CakePHP -----
+app/tmp/cache/models/*
+app/tmp/cache/persistent/*
+app/tmp/cache/views/*
+app/tmp/cache/api/*
+app/tmp/cache/app/*
+!app/tmp/cache/models/empty
+!app/tmp/cache/persistcent/empty
+!app/tmp/cache/views/empty
+!app/tmp/cache/api/empty
+!app/tmp/cache/app/empty
+
+# ----- Logs -----
+app/tmp/logs/*
+!app/tmp/logs/empty
+
+# ----- Sesiones -----
+app/tmp/sessions/*
+!app/tmp/sessions/empty
+
+# ----- Pruebas temporales -----
+app/tmp/tests/*
+!app/tmp/tests/empty
+
+# ----- TEMP completo (extra seguridad) -----
+app/tmp/*
+
+# ----- Dependencias PHP (Composer) -----
+app/Vendor/
+vendor/
+
+# ----- Dependencias Node.js -----
+node_modules/
+
+# ----- Archivos de entorno -----
+.env
+.env.local
+.env.*.local
+
+# ----- Archivos de configuración de servidor -----
+php.ini
+.user.ini
+.ftpquota
+
+# ----- Backups y dumps -----
+*.sql
+*.zip
+*.tar.gz
+*.tar.bz2
+*.bak
+
+# ----- 🚨 MEDIA Y ARCHIVOS PESADOS (CRÍTICO) -----
+app/webroot/files/
+app/webroot/files/**
+app/tmp/*
+!app/tmp/.gitkeep
+
+# Opcional: si manejas uploads en otras rutas
+uploads/
+storage/
+public/uploads/
+app/webroot/files/
+app/tmp/
+*.zip
+*.mp4
+
+# ----- Videos / imágenes grandes -----
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.webp
+
+# (opcional) si SÍ quieres imágenes en repo, elimina las líneas de arriba
+
+# ----- Assets compilados -----
+# app/webroot/css/*.min.css
+# app/webroot/js/build/
+# app/webroot/js/*.min.js
+
+# ----- Sistema operativo -----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ----- IDEs y editores -----
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+nbproject/
+.project
+.buildpath
+
+# ----- PHP -----
+*.log
+*.cache
+
+# ----- Let's Encrypt / ACME -----
+.well-known/acme-challenge/
+.well-known/pki-validation/

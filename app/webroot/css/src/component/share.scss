@@ -1,0 +1,35 @@
+.share-component {
+	display: flex;
+
+	.share-list {
+		display: flex;
+		align-items: center;
+		margin: 0;
+		padding-left: 0;
+		list-style: none;
+		line-height: 1;
+	}
+	.share-item {
+		display: flex;
+
+		+ .share-item {
+			margin-left: 5px;
+		}
+	}
+
+	.fb-share-button {
+		vertical-align: top;
+
+		> span {
+			vertical-align: top !important;
+		}
+	}
+	.pinterest-button {
+		display: inline-block;
+		vertical-align: top;
+
+		a {
+			vertical-align: top !important;
+		}
+	}
+}

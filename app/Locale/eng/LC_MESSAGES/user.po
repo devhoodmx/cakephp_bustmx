@@ -1,0 +1,5 @@
+msgid	"role-id"
+msgstr	"Role"
+
+msgid	"active"
+msgstr	"Do you want to activate this user?"

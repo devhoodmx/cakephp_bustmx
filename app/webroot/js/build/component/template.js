@@ -1,0 +1,1 @@
+!function(n,t){"use strict";var o={load:function(){$(t).ready($.proxy(this.init,this))},init:function(){var e=this;$('[data-component="template"]').each(function(n,t){var o=$(t);e.render(o)})},render:function(n){}};o.load(),n.hozen.component.Template=o}(window,window.document);

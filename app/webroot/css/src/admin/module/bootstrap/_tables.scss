@@ -1,0 +1,49 @@
+table tr:not(:hover) .btn-toolbar {
+	.btn, .open .btn {
+		background-color: transparent;
+		border-color: transparent;
+		@include box-shadow(none);
+	}
+
+	.open ul {
+		display: none;
+	}
+}
+
+
+table, table.table-hover {
+	tr.sortable-placeholder {
+		background: $black-haze;
+		border: none;
+	}
+
+	tr.ui-sortable-helper {
+		th, td, &:hover th, &:hover td {
+ 			border-color: $sea-mist;
+ 			background: $frostee;
+ 		}
+ 	}
+
+	.ui-sortable tr:hover {
+		cursor: pointer;
+	}
+
+	.field-label {
+		font-weight: bold;
+	}
+}
+
+table {
+	td.children {
+		padding-left: 50px !important;
+	}
+
+	> tbody {
+		tr.disabled, tr.state-not-active {
+			> td {
+				opacity: .8;
+				background: #F5F5F5;
+			}
+		}
+	}
+}

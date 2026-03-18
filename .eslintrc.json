@@ -1,0 +1,33 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"jquery": true,
+		"node": true
+	},
+	"globals": {
+		"_": "readonly",
+		"google": "readonly",
+		"FB": "readonly",
+		"Handlebars": "readonly",
+		"alertify": "readonly",
+		"hozen": "readonly",
+		"Swiper": "readonly"
+	},
+	"rules": {
+		"curly": 2,
+		"wrap-iife": [2, "any"],
+		"no-use-before-define": [
+			2,
+			{
+				"functions": false
+			}
+		],
+		"new-cap": 2,
+		"no-caller": 2,
+		"no-undef": 2,
+		"strict": [2, "function"],
+		"no-cond-assign": 2,
+		"no-mixed-spaces-and-tabs": 2
+	}
+}

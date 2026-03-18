@@ -1,0 +1,11 @@
+msgid	"user"
+msgstr	"User"
+
+msgid	"users"
+msgstr	"Users"
+
+msgid "module"
+msgstr "Module"
+
+msgid "modules"
+msgstr "Modules"

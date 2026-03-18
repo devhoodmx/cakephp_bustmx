@@ -1,0 +1,101 @@
+msgid	"username"
+msgstr	"Usuario"
+
+msgid	"key"
+msgstr	"Clave"
+
+msgid	"es-key"
+msgstr	"Clave en español"
+
+msgid	"en-key"
+msgstr	"Clave en inglés"
+
+msgid	"email"
+msgstr	"Correo electrónico"
+
+msgid	"phone"
+msgstr	"Teléfono"
+
+msgid	"name"
+msgstr	"Nombre"
+
+msgid	"first-name"
+msgstr	"Nombre"
+
+msgid	"last-name"
+msgstr	"Apellido"
+
+msgid	"profile"
+msgstr	"Perfil"
+
+msgid	"background"
+msgstr	"Imagen de fondo"
+
+msgid	"es-name"
+msgstr	"Nombre en español"
+
+msgid 	"en-name"
+msgstr	"Nombre en inglés"
+
+msgid	"type"
+msgstr	"Tipo"
+
+msgid	"created"
+msgstr	"Fecha de creación"
+
+msgid	"modified"
+msgstr	"Ultima modificación"
+
+msgid	"display-created"
+msgstr	"Fecha de creación"
+
+msgid	"image"
+msgstr	"Imagen"
+
+msgid	"video"
+msgstr	"Video"
+
+msgid	"document"
+msgstr	"Documento"
+
+msgid	"description"
+msgstr	"Descripción"
+
+msgid	"notes"
+msgstr	"Observaciones"
+
+msgid	"price"
+msgstr	"Precio"
+
+msgid	"list"
+msgstr	"Lista"
+
+msgid	"display-sent"
+msgstr	"Fecha que se envió la solicitud"
+
+msgid	"position"
+msgstr	"Posición"
+
+msgid	"message"
+msgstr	"Mensaje"
+
+msgid	"company"
+msgstr	"Empresa"
+
+msgid	"display-vacancy"
+msgstr	"Vacante postulada"
+
+msgid	"gallery"
+msgstr	"Galeria"
+
+msgid	"cover"
+msgstr	"Cover"
+
+msgid	"formatted-price"
+msgstr	"Precio"
+
+msgid	"services"
+msgstr	"Servicios"
+
+msgid	"final-text"
+msgstr	"Texto Final"

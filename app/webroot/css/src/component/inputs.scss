@@ -1,0 +1,12 @@
+@import '../vendor/bootstrap-4/functions';
+@import '../vendor/bootstrap-4/variables';
+@import '../vendor/bootstrap-4/mixins';
+@import '../utility/functions';
+
+.inputs-component {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+@include media-breakpoint-up(lg) {
+}

@@ -1,0 +1,49 @@
+## Exception Error
+msgid	"not-found"
+msgstr	"No se encontro la vista"
+
+msgid	"bad-request"
+msgstr	"Ocurrió un error en la petición"
+
+msgid	"method-not-allowed"
+msgstr	"La operación que desea realizar no es posible"
+
+## Fields Error
+msgid	"not-empty"
+msgstr	"The field cannot be left blank"
+
+msgid	"not-blank"
+msgstr	"The field cannot be left blank"
+
+msgid "email"
+msgstr "Email format is invalid"
+
+msgid "email-error"
+msgstr "Formato de email inválido"
+
+msgid "8-characters-length"
+msgstr "La longitud mínima es de 8 carácteres"
+
+msgid "is-equal-to-field"
+msgstr "Los campos no coinciden"
+
+msgid "unique"
+msgstr "Nombre no disponible"
+
+msgid "unique-username"
+msgstr "Nombre de Usuario no disponible"
+
+msgid "unique-email"
+msgstr "Correo Electrónico no disponible"
+
+msgid	"numeric"
+msgstr	"The value must be a number"
+
+msgid	"is-unique"
+msgstr	"Already in database"
+
+msgid 	"postal"
+msgstr	"Invalid zip code"
+
+msgid	"recaptcha"
+msgstr	"Fill the reCaptcha"

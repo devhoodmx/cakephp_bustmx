@@ -1,0 +1,11 @@
+msgid	"parent-id"
+msgstr	"Ruta"
+
+msgid	"slug"
+msgstr	"Identificador"
+
+msgid	"color"
+msgstr	"Identificador"
+
+msgid "delete-notification"
+msgstr "La carpeta <strong>%s</strong> ha sido borrada"

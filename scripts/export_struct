@@ -1,0 +1,34 @@
+#!/bin/bash
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+
+if [[ "$ROOT_DIR" = '' || "$ROOT_DIR" = '/' ]]; then
+	exit 1
+fi
+
+cd "$ROOT_DIR"
+
+set -e
+
+# Test if dbdump command exists
+if ! command -v dbdump &> /dev/null
+then
+    echo "dbdump could not be found. To install, run: npm i -g @luissquall/dbdump"
+    exit 1
+fi
+
+# Webroot & db vars
+webroot="$ROOT_DIR"
+db_conf="$webroot/app/Config/database.php"
+db_user=$(perl -n -e 'if (/public \$default/ .. /\);/) {/.login.\s+=>\s+(.)([^\1]+)\1/ && print "$2"}' "$db_conf")
+db_pass=$(perl -n -e 'if (/public \$default/ .. /\);/) {/.password.\s+=>\s+(.)([^\1]+)\1/ && print "$2"}' "$db_conf")
+db_name=$(perl -n -e 'if (/public \$default/ .. /\);/) {/.database.\s+=>\s+(.)([^\1]+)\1/ && print "$2"}' "$db_conf")
+
+if [[ -z "$db_user" || -z "$db_name" ]]; then
+	echo "Could not extract db_user or db_name from $db_conf"
+	exit 1
+fi
+
+# Dump database struct
+dbdump -u "$db_user" ${db_pass:+-p"'$db_pass'"} -d "$db_name" > "$webroot/app/Config/Schema/struct/struct.sql"
+
+exit 0

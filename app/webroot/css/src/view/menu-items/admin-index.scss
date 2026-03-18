@@ -1,0 +1,156 @@
+$menu-item-padding: 20px;
+$menu-item-actions: 3;
+
+.menu-panel {
+	.panel-title {
+		[data-toggle] {
+			display: inline-block;
+			position: relative;
+			padding-right: 10px + 4;
+			text-decoration: none;
+
+			&::after {
+				display: block;
+				position: absolute;
+				top: 4px;
+				right: 0;
+				width: 10px;
+				height: 6px;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				-webkit-font-smoothing: antialiased;
+				font-family: 'Font Awesome 5 Pro';
+				font-weight: 900;
+				content: "\f0de";
+			}
+
+			&.collapsed {
+				&::after {
+					top: 7px;
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+	.panel-body {
+		padding: 15px 20px;
+
+		> .row {
+			margin-left: -20px;
+			margin-right: -20px;
+		}
+	}
+
+	.btn-add {
+		padding-left: 0;
+		border: 0;
+		color: #999999;
+
+		svg {
+			margin-right: 8px;
+		}
+	}
+
+	// Menu
+	.menu {
+		width: 100%;
+		padding-left: 0;
+		list-style: none;
+	}
+	// Levels
+	.menu-level-1 {
+		.menu-item-title {
+			padding-left: $menu-item-padding * 1;
+		}
+		.menu-item-arrow-path {
+			fill: #11bdae;
+		}
+	}
+	.menu-level-1 .menu-level-2 {
+		.menu-item-title {
+			padding-left: $menu-item-padding * 2;
+		}
+		.menu-item-arrow-path {
+			fill: #22d315;
+		}
+	}
+	.menu-level-1 .menu-level-2 .menu-level-3 {
+		.menu-item-title {
+			padding-left: $menu-item-padding * 3;
+		}
+		.menu-item-arrow-path {
+			fill: #f47e1b;
+		}
+	}
+
+	// Menu item
+	.menu-item-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: 3px 6px 3px 0;
+
+		&:hover {
+			padding-top: 2px;
+			padding-bottom: 2px;
+			border-top: 1px solid #e6e6e6;
+			border-bottom: 1px solid #e6e6e6;
+			cursor: pointer;
+			background: #f2f2f2;
+		}
+		&:not(:hover) .btn {
+			background-color: transparent;
+			border-color: transparent;
+		}
+	}
+	.menu-item-title {
+		display: flex;
+		width: 300px;
+		padding-right: 6px;
+	}
+	.menu-item-arrow {
+		width: 20px;
+	}
+	.menu-item-name {
+		font-weight: 500;
+	}
+	.menu-item-link {
+		display: flex;
+		flex: 1;
+		align-items: center;
+		padding: 0 6px;
+		font-size: 12px;
+		color: #999999;
+		word-wrap: break-word;
+		word-break: break-all;
+
+		i {
+			margin-right: 10px;
+		}
+		a {
+			color: #999999;
+		}
+	}
+	.menu-item-actions {
+		display: flex;
+		// Padding + buttons - right margin
+		min-width: (6 * 2) + ((26 + 5) * $menu-item-actions) - 5px;
+		padding: 0 6px;
+
+		.btn {
+			min-width: 26px;
+			min-height: 26px;
+			margin-right: 5px;
+			padding: 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+			> i {
+				vertical-align: bottom;
+			}
+		}
+	}
+}

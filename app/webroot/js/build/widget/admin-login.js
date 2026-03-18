@@ -1,0 +1,1 @@
+!function(a,b){"use strict";var c={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){var a=hozen.app.backgroundImage;a&&$.backstretch(a)}};c.load(),a.hozen.app.AdminLoginApp=c}(window,window.document);

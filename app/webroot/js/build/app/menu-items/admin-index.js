@@ -1,0 +1,1 @@
+!function(a,b,c){"use strict";var d=a.hozen,e={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){$(".menu-panel .menu").each(function(a,b){Sortable.create(b,{onUpdate:function(a){var b=$(a.item);$.ajax({url:d.app.baseURL+"admin/menu_items/move/"+b.data("id")+"/"+a.newIndex,dataType:"json"})}})})}};e.load(),a.hozen.app.AdminIndexApp=e}(window,window.document);

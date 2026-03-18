@@ -1,0 +1,19 @@
+.webpages {
+	.webpage-key {
+		display: inline-flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		i {
+			margin-left: 3px;
+			font-size: 65%;
+		}
+	}
+	.webpage-translation > .locale-col {
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+	.webpage-secondary > td {
+		border-top-color: #f5f5f5;
+	}
+}

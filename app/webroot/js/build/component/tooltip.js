@@ -1,0 +1,1 @@
+!function(o,t,i){"use strict";var n={load:function(){$(t).ready($.proxy(this.init,this))},init:function(){$('[data-toggle="tooltip"]').tooltip()}};n.load(),o.hozen.component.Tooltip=n}(window,window.document);

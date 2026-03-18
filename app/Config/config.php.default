@@ -1,0 +1,89 @@
+<?php
+$config = array(
+	'App' => array(
+		'description' => '',
+		'locale' => 'es',
+		'timezone' => 'America/Mexico_City',
+		'maintenance' => array(
+			'active' => false,
+			'allow' => array()
+		),
+		'debug' => array(
+			'level' => 2,
+			'allow' => array()
+		),
+		'dev' => [
+			'sql' => true
+		],
+		'assets' => array(
+			'type' => Configure::read('debug') == 0 ? 'build' : 'src',
+			'css' => array(
+				'version' => 1
+			),
+			'js' => array(
+				'version' => 1
+			)
+		),
+		'i18n' => [
+			'locales' => [
+				'es',
+				//'en'
+			]
+		],
+		'webpages' => array(
+			'active' => true,
+			'pretty-urls' => false,
+			'locale' => array(
+				'default' => 'es',
+				'options' => array(
+					'es',
+					'en'
+				)
+			)
+		),
+		'services' => array(
+			'google-maps' => array(
+				'api-key' => ''
+			),
+			'ga' => array(
+				'account' => ''
+			),
+			'recaptcha' => array(
+				'public-key' => '',
+				'private-key' => '',
+				'locales' => array(
+					'spa' => 'es-419',
+					'es' => 'es-419',
+					'eng' => 'en',
+					'en' => 'en',
+					'fra' => 'fr',
+					'fr' => 'fr',
+					'ger' => 'de',
+					'de' => 'de'
+				)
+			),
+			'hubspot' => [
+				'portal-id' => ''
+			]
+		),
+		'email' => array(
+			'theme' => array(
+				'default' => array(
+					'a' => 'color: #79AB36;'
+				)
+			),
+			'lists' => array(
+				'templates' => array('monos@affenbits.com')
+			)
+		)
+	),
+	'API' => array(
+		'auth' => [
+			'token' => ''
+		],
+		'client-id' => '',
+		'client-secret' => '',
+		'url' => ''
+	)
+);
+?>

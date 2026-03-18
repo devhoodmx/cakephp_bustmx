@@ -1,0 +1,20 @@
+msgid	"published-dialog-title"
+msgstr	"Publicar / Ocultar galería"
+
+msgid	"not-published-dialog"
+msgstr	"¿Deseas ocultar la galería <strong>%s</strong>?"
+
+msgid	"published-dialog"
+msgstr	"¿Deseas publicar la galería <strong>%s</strong>?"
+
+msgid	"not-published-notification"
+msgstr	"Se ha ocultado la galería"
+
+msgid	"published-notification"
+msgstr	"Se ha publicado la galería"
+
+msgid	"published"
+msgstr	"Publicar la galería"
+
+msgid	"image"
+msgstr	"Imágenes"

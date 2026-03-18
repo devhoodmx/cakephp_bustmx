@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Miyabi Vinos</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body class="bg-[#f7f4ee]">
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+// AQUI PEGAS TODO EL CODIGO DE LA APP
+// desde:
+
+// export default function MiyabiWineCatalogApp() {
+function MiyabiWineCatalogApp() {
+  
+
+  const filterOptions = [
+    { key: "color", label: "Color" },
+    { key: "uva", label: "Tipo de uva" },
+    { key: "pais", label: "Países" }
+  ];
+const [wines, setWines] = React.useState([]);
+
+React.useEffect(() => {
+  fetch("https://docs.google.com/spreadsheets/d/1ppAlfT-QE7SUhF6ARkH4k5tlnTiQzLd6f5aY-QqiogA/gviz/tq?tqx=out:json&gid=0")
+    .then(res => res.text())
+    .then(text => {
+     const jsonText = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]+)\);/)[1];
+const json = JSON.parse(jsonText);
+      const rows = json.table.rows;
+
+      const parsed = rows
+        .map(r => ({
+          id: r.c[0]?.v || "",
+          nombre: r.c[1]?.v || "",
+          bodega: r.c[2]?.v || "",
+          paisRaw: `${r.c[3]?.v || ""} ${r.c[4]?.v || ""}`.trim(),
+          color: r.c[5]?.v || "",
+          uvas: String(r.c[6]?.v || "")
+            .split(",")
+            .map(u => u.trim())
+            .filter(Boolean),
+          vista: r.c[7]?.v || "",
+          nariz: r.c[8]?.v || "",
+          gusto: r.c[9]?.v || "",
+          maridaje: r.c[10]?.v || "",
+          imagen: r.c[11]?.v || "",
+          activo: r.c[12]?.v ?? ""
+        }))
+        .filter(v => String(v.activo).trim() === "1" && v.id && v.nombre);
+
+      setWines(parsed);
+    })
+    .catch(err => console.error("Error cargando Google Sheets:", err));
+}, []);
+
+const [homeFilter, setHomeFilter] = React.useState(null);
+const [catalogFilters, setCatalogFilters] = React.useState({ color: null, uva: null, pais: null });
+const [selectedWine, setSelectedWine] = React.useState(null);
+const [homeSelectorOpen, setHomeSelectorOpen] = React.useState(false);
+
+  const inferCountry = (raw) => {
+    const text = (raw || "").toUpperCase();
+    if (text.includes("MEXICO")) return "México";
+    if (text.includes("ITALIA")) return "Italia";
+    if (text.includes("FRANCIA") || text.includes("FRACIA")) return "Francia";
+    if (text.includes("ESPAÑA")) return "España";
+    if (text.includes("USA")) return "USA";
+    return raw;
+  };
+
+  const getValues = (wine, filterKey) => {
+    if (filterKey === "color") return [wine.color];
+    if (filterKey === "uva") return wine.uvas;
+    if (filterKey === "pais") return [inferCountry(wine.paisRaw)];
+    return [];
+  };
+
+  const preferredOrder = {
+    color: ["Tintos", "Blancos", "Rosados"],
+    pais: ["México", "Italia", "Francia", "España", "USA"]
+  };
+
+  const sortGroupTitles = (titles, groupingKey) => {
+    if (preferredOrder[groupingKey]) {
+      return [...titles].sort((a, b) => {
+        const ai = preferredOrder[groupingKey].indexOf(a);
+        const bi = preferredOrder[groupingKey].indexOf(b);
+        return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi) || a.localeCompare(b);
+      });
+    }
+    return [...titles].sort((a, b) => a.localeCompare(b));
+  };
+
+  const winesAfterSecondaryFilters = React.useMemo(() => {
+    if (!homeFilter) return [];
+
+    return wines.filter((wine) => {
+      return filterOptions.every((option) => {
+        if (option.key === homeFilter) return true;
+        const selectedValue = catalogFilters[option.key];
+        if (!selectedValue) return true;
+        return getValues(wine, option.key).includes(selectedValue);
+      });
+    });
+  }, [homeFilter, catalogFilters]);
+
+  const groupedValues = React.useMemo(() => {
+    if (!homeFilter) return [];
+
+    const map = new Map();
+    winesAfterSecondaryFilters.forEach((wine) => {
+      getValues(wine, homeFilter).forEach((value) => {
+        if (!map.has(value)) map.set(value, []);
+        map.get(value).push(wine);
+      });
+    });
+
+    const orderedTitles = sortGroupTitles(Array.from(map.keys()), homeFilter);
+    return orderedTitles.map((title) => ({ title, items: map.get(title) || [] }));
+  }, [homeFilter, winesAfterSecondaryFilters]);
+
+  const availableOptions = React.useMemo(() => {
+    if (!homeFilter) return { color: [], uva: [], pais: [] };
+
+    const result = {};
+    filterOptions.forEach((option) => {
+      if (option.key === homeFilter) {
+        result[option.key] = groupedValues.map((group) => group.title);
+        return;
+      }
+
+      const candidateWines = wines.filter((wine) => {
+        return filterOptions.every((innerOption) => {
+          if (innerOption.key === homeFilter) return true;
+          if (innerOption.key === option.key) return true;
+          const selectedValue = catalogFilters[innerOption.key];
+          if (!selectedValue) return true;
+          return getValues(wine, innerOption.key).includes(selectedValue);
+        });
+      });
+
+      const values = new Set();
+      candidateWines.forEach((wine) => {
+        getValues(wine, option.key).forEach((value) => values.add(value));
+      });
+      result[option.key] = sortGroupTitles(Array.from(values), option.key);
+    });
+
+    return result;
+  }, [homeFilter, catalogFilters, groupedValues]);
+
+  const PlaceholderBottle = () => (
+    <div className="flex h-[360px] w-[160px] items-center justify-center rounded-[32px] border border-zinc-300 bg-gradient-to-b from-zinc-100 to-zinc-200 shadow-inner">
+      <div className="relative h-[290px] w-[82px] rounded-b-[26px] rounded-t-[18px] bg-zinc-900">
+        <div className="absolute left-1/2 top-[-38px] h-[52px] w-[26px] -translate-x-1/2 rounded-t-[10px] bg-zinc-900" />
+        <div className="absolute left-1/2 top-[-48px] h-[12px] w-[18px] -translate-x-1/2 rounded-t-md bg-zinc-800" />
+        <div className="absolute left-1/2 top-[70px] h-[92px] w-[56px] -translate-x-1/2 rounded-xl bg-white/80 shadow-sm" />
+      </div>
+    </div>
+  );
+
+  if (selectedWine) {
+    return (
+      <div className="min-h-screen bg-[#f7f4ee] text-[#111111]">
+        <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
+          <div className="mb-8 flex items-center justify-between">
+  <button
+    onClick={() => setSelectedWine(null)}
+    className="rounded-full border border-zinc-300 px-4 py-2 text-sm tracking-[0.18em] uppercase transition hover:bg-white"
+  >
+    Regresar
+  </button>
+
+  <div className="text-center leading-tight">
+    <div className="text-[10px] uppercase tracking-[0.35em] text-zinc-500">
+      Carta de vinos
+    </div>
+    <div className="text-xl font-semibold tracking-[0.35em]">
+      MIYABI
+    </div>
+  </div>
+
+  <div className="h-10 w-10 rounded-md border border-zinc-300 bg-white" />
+</div>
+
+          <div className="grid gap-10 rounded-[32px] border border-zinc-200 bg-white/70 p-8 shadow-sm md:grid-cols-[1.1fr_0.9fr] md:p-12">
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.3em] text-zinc-500">Nombre</p>
+              <h1 className="max-w-md text-4xl font-light uppercase leading-tight tracking-[0.08em] md:text-6xl">
+                {selectedWine.nombre}
+              </h1>
+              <div className="mt-10 grid gap-6 md:grid-cols-2">
+                <Info label="Bodega" value={selectedWine.bodega} />
+                <Info label="Vista" value={selectedWine.vista} />
+                <Info label="País" value={selectedWine.paisRaw} />
+                <Info label="Nariz" value={selectedWine.nariz} />
+                <Info label="Tipo de uva" value={selectedWine.uvas.join(", ")} />
+                <Info label="Gusto" value={selectedWine.gusto} />
+              </div>
+              <div className="mt-8 max-w-2xl">
+                <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">Maridaje Miyabi</p>
+                <p className="text-base leading-7 text-zinc-700">{selectedWine.maridaje}</p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+  {selectedWine.imagen ? (
+    <img
+      src={selectedWine.imagen}
+      alt={selectedWine.nombre}
+      className="max-h-[360px] w-auto object-contain"
+    />
+  ) : (
+    <PlaceholderBottle />
+  )}
+</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#f7f4ee] text-[#111111]">
+      <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
+        {!homeFilter ? (
+          <section className="flex min-h-[80vh] flex-col items-center justify-center rounded-[36px] border border-zinc-200 bg-white/70 px-6 text-center shadow-sm">
+            <div className="text-[11px] uppercase tracking-[0.4em] text-zinc-500 mb-2">
+  Carta de vinos
+</div>
+
+<div className="mb-14 text-4xl font-semibold tracking-[0.45em] md:text-6xl">
+  MIYABI
+</div>
+            <div className="grid w-full max-w-2xl gap-5 md:grid-cols-3">
+              {filterOptions.map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => {
+                    setHomeFilter(item.key);
+                    setCatalogFilters({ color: null, uva: null, pais: null });
+                  }}
+                  className="group rounded-[28px] border border-zinc-200 bg-white px-6 py-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-200 bg-[#faf8f3] text-xl">
+                    {item.key === "color" ? "◐" : item.key === "uva" ? "◌" : "⌂"}
+                  </div>
+                  <div className="text-sm uppercase tracking-[0.26em] text-zinc-700">{item.label}</div>
+                </button>
+              ))}
+            </div>
+          </section>
+        ) : (
+          <section>
+            <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="text-2xl font-semibold tracking-[0.3em]">MIYABI</div>
+                <button
+                  onClick={() => {
+                    setHomeFilter(null);
+                    setCatalogFilters({ color: null, uva: null, pais: null });
+                  }}
+                  className="rounded-full border border-zinc-300 px-4 py-2 text-xs uppercase tracking-[0.22em] hover:bg-white"
+                >
+                  Regresar a home
+                </button>
+              </div>
+              <div className="relative">
+                <button
+                  onClick={() => setHomeSelectorOpen((v) => !v)}
+                  className="flex h-10 w-10 items-center justify-center rounded-md border border-zinc-300 bg-white"
+                >
+                  ☰
+                </button>
+
+                {homeSelectorOpen && (
+                  <div className="absolute right-0 mt-2 w-44 rounded-xl border border-zinc-200 bg-white shadow-lg">
+                    {filterOptions.map((item) => (
+                      <button
+                        key={item.key}
+                        onClick={() => {
+                          setHomeFilter(item.key);
+                          setCatalogFilters({ color: null, uva: null, pais: null });
+                          setHomeSelectorOpen(false);
+                        }}
+                        className="block w-full px-4 py-3 text-left text-sm hover:bg-zinc-50"
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="mb-8 flex flex-wrap items-center gap-4 rounded-[24px] border border-zinc-200 bg-white/70 p-4">
+              <div className="rounded-full border border-[#111111] bg-[#111111] px-4 py-2 text-xs uppercase tracking-[0.22em] text-white">
+                {filterOptions.find((item) => item.key === homeFilter)?.label}
+              </div>
+
+              {filterOptions
+                .filter((item) => item.key !== homeFilter)
+                .map((item) => {
+                  const values = availableOptions[item.key] || [];
+                  return (
+                    <div key={item.key} className="min-w-[220px] flex-1">
+                      
+                      <select
+                        value={catalogFilters[item.key] || ""}
+                        onChange={(e) => {
+                          const value = e.target.value || null;
+                          setCatalogFilters((prev) => ({
+                            ...prev,
+                            [item.key]: value
+                          }));
+                        }}
+                        className="w-full rounded-[18px] border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-800 outline-none transition focus:border-zinc-500"
+                      >
+                        <option value="">Todos los {item.label.toLowerCase()}</option>
+                        {values.map((value) => (
+                          <option key={`${item.key}-${value}`} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  );
+                })}
+            </div>
+
+            <div className="space-y-10">
+              {groupedValues.map((group) => (
+                <div key={group.title}>
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <h2 className="text-xl uppercase tracking-[0.22em] text-zinc-700">{group.title}</h2>
+                    <div className="text-xs uppercase tracking-[0.18em] text-zinc-400">
+                      {group.items.length} vinos
+                    </div>
+                  </div>
+
+                  <div className="relative">
+                    <div className="flex gap-4 overflow-x-auto pb-4 pr-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                      {group.items.map((wine) => (
+                        <button
+                          key={`${group.title}-${wine.id}`}
+                          onClick={() => setSelectedWine(wine)}
+                          className="group w-[220px] min-w-[220px] flex-shrink-0 rounded-[28px] border border-zinc-200 bg-white p-4 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                        >
+                          <div className="mb-4 flex h-56 items-center justify-center rounded-[22px] bg-[#f8f6f1]">
+  {wine.imagen ? (
+    <img
+      src={wine.imagen}
+      alt={wine.nombre}
+      className="h-52 w-auto object-contain"
+    />
+  ) : (
+    <div className="relative h-36 w-12 rounded-b-2xl rounded-t-xl bg-zinc-900">
+      <div className="absolute left-1/2 top-[-20px] h-8 w-4 -translate-x-1/2 rounded-t-md bg-zinc-900" />
+      <div className="absolute left-1/2 top-7 h-12 w-8 -translate-x-1/2 rounded-lg bg-white/80" />
+    </div>
+  )}
+</div>
+                          <div className="space-y-2">
+                            <p className="text-lg font-medium uppercase leading-tight tracking-[0.06em]">{wine.nombre}</p>
+                            <p className="text-sm uppercase tracking-[0.18em] text-zinc-500">{wine.bodega}</p>
+                            <p className="line-clamp-2 text-sm text-zinc-600">{wine.uvas.join(", ")}</p>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Info({ label, value }) {
+  return (
+    <div>
+      <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">{label}</p>
+      <p className="text-base leading-7 text-zinc-800">{value}</p>
+    </div>
+  );
+}
+
+// hasta el final
+
+</script>
+
+<script type="text/babel">
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MiyabiWineCatalogApp />);
+
+</script>
+
+</body>
+</html>

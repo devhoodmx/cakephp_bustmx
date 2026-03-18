@@ -1,0 +1,1 @@
+!function(o){"use strict";var n={version:"0.1.0",form:{},data:{component:{}},app:{},core:{},controller:{},view:{},model:{},widget:{},config:{},locale:{},lib:{},template:{},plugin:{},component:{},__d:function(o,e){var l=n.app.locale;return n.locale[l]&&n.locale[l][o]?n.locale[l][o][e]||e:null}};o.hozen=n}(window,this.document);

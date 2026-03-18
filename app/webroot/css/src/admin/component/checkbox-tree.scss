@@ -1,0 +1,82 @@
+@import '../utility/base';
+
+.checkbox-tree-component {
+	legend {
+		// A large font-size requires offseting the checkbox background
+		input[type='checkbox'] {
+			+ label {
+				background-position: 0 -1995px;
+			}
+
+			&:focus + label {
+				background-position: 0 -2495px;
+			}
+			&:checked + label {
+				background-position: 0 -2995px;
+			}
+			&:focus:checked +label {
+				background-position: 0 -3495px;
+			}
+			&:indeterminate + label {
+				background-position: 0 -3995px;
+			}
+		}
+	}
+
+	.checkbox {
+		margin-bottom: 0;
+	}
+
+	.checkbox-category {
+		margin-bottom: 14px;
+		padding-bottom: 6px;
+		border-bottom: 1px solid #e5e5e5;
+
+		.checkbox {
+			label {
+				margin-right: 0;
+				font-weight: 500;
+			}
+		}
+	}
+
+	.checkboxes {
+		margin-bottom: 30px;
+
+		.checkboxes {
+			position: relative;
+			margin-top: 15px;
+			margin-bottom: 0px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 3px;
+				left: 10px;
+				width: 1px;
+				height: calc(100% - 14px);
+				border-left: 1px solid $silver;
+			}
+		}
+	}
+
+	.checkbox-section {
+		margin-bottom: 15px;
+
+		// Children
+		.checkbox-section {
+			position: relative;
+			padding-left: 24px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 9px;
+				left: 10px;
+				width: 10px;
+				height: 1px;
+				border-bottom: 1px solid $silver;
+			}
+		}
+	}
+}

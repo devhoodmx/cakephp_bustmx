@@ -1,0 +1,12 @@
+#!/bin/bash
+ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )"
+
+if [[ "$ROOT_DIR" = '' || "$ROOT_DIR" = '/' ]]; then
+	exit 1
+fi
+
+cd "$ROOT_DIR"
+
+find app/tmp -type f -not \( -name 'empty' -o -path 'app/tmp/logs/*' \) -print0 | xargs -0 rm -v
+
+exit 0

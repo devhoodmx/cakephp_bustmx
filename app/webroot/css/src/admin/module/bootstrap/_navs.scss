@@ -1,0 +1,20 @@
+//
+// Navs
+// --------------------------------------------------
+
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+.nav-tabs {
+	margin-bottom: 20px;
+
+	> li {
+		// Actual tabs (as links)
+		> a {
+			margin-right: 5px;
+			@include border-top-radius(12px);
+		}
+	}
+}

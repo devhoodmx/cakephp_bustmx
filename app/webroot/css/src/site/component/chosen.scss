@@ -1,0 +1,73 @@
+$chosen-sprite: url('/img/vendor/chosen/chosen-sprite.png');
+$chosen-sprite-retina: url('/img/vendor/chosen/chosen-sprite@2x.png');
+
+@import '../utility/base';
+@import '../../vendor/bootstrap-4/functions';
+@import 'bootstrap-4/variables';
+@import '../../vendor/bootstrap-4/variables';
+@import '../../vendor/bootstrap-4/mixins';
+@import '../../vendor/chosen/chosen';
+
+.chosen-container {
+	@include font-size($input-font-size);
+
+	.chosen-results {
+		margin: 0;
+		padding: 0;
+		color: $input-color;
+
+		li {
+			padding: $input-padding-y $input-padding-x;
+			line-height: 1;
+		}
+	}
+}
+.chosen-container-single {
+	.chosen-single {
+		height: $input-height;
+		padding: $input-padding-y $input-padding-x;
+		font-family: $input-font-family;
+		@include font-size($input-font-size);
+		font-weight: $input-font-weight;
+		line-height: $input-line-height;
+		color: $input-color;
+		background: $input-bg;
+		background-clip: padding-box;
+		border: $input-border-width solid $input-border-color;
+		box-shadow: none;
+
+		// Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+		@include border-radius($input-border-radius, 0);
+
+		div {
+			b {
+				background-position: 0 rem(6);
+			}
+		}
+	}
+
+	.chosen-drop {
+		background: $input-bg;
+		border: $input-border-width solid $input-border-color;
+		@include border-radius($input-border-radius, 0);
+		box-shadow: none;
+	}
+}
+
+// Dropdown open (chosen-container-active chosen-with-drop)
+.chosen-container-active {
+	&.chosen-with-drop {
+		.chosen-single {
+			@include border-radius($input-border-radius, 0);
+			border: $input-border-width solid $input-border-color;
+			box-shadow: none;
+			background-image: none;
+
+			div {
+				b {
+					background-position: rem(-18) rem(6);
+				}
+			}
+		}
+	}
+}

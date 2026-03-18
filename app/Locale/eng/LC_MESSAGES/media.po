@@ -1,0 +1,33 @@
+msgid	"drag-supported"
+msgstr	"Drag an image here"
+
+msgid	"drag-unsupported"
+msgstr	"Clic here to upload file"
+
+msgid	"click-here"
+msgstr	"click here"
+
+msgid	"edit-media"
+msgstr	"Edit"
+
+## Errors
+msgid	"invalid"
+msgstr	"Invalid"
+
+msgid	"fileSize"
+msgstr	"File size too large"
+
+msgid	"invalidExtension"
+msgstr	"Invalid file"
+
+msgid	"processError"
+msgstr	"There was an error while processing your file"
+
+msgid	"unsupportedType"
+msgstr	"Unsupported file type"
+
+msgid	"maliciousUpload"
+msgstr	"Malicious upload"
+
+msgid	"uploadError"
+msgstr	"There was an error while uploading the file"

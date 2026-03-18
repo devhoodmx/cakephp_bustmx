@@ -1,0 +1,11 @@
+msgid	"page"
+msgstr	"Página"
+
+msgid	"content"
+msgstr	"Contenido"
+
+msgid	"gallery"
+msgstr	"Galería de imágenes"
+
+msgid 	"archive"
+msgstr	"Archivo"

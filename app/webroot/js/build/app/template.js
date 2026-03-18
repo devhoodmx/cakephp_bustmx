@@ -1,0 +1,1 @@
+!function(a,b){"use strict";var c=a.hozen;c.widget.BlackHole;var d={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){},_onClick:function(){}};d.load(),a.hozen.app.TemplateApp=d}(window,window.document);

@@ -1,0 +1,173 @@
+## General
+msgid	"page-title"
+msgstr	"%s | %s"
+
+msgid	"add-module"
+msgstr	"Agregar %s"
+
+msgid	"add-submodule"
+msgstr	"Agregar módulo de %s"
+
+msgid	"empty-list"
+msgstr	"No se encontraron elementos."
+
+msgid 	"no"
+msgstr	"No"
+
+msgid	"yes"
+msgstr 	"Sí"
+
+msgid	"dashboard"
+msgstr 	"Inicio"
+
+## Actions
+msgid	"add"
+msgstr	"Agregar"
+
+msgid	"edit"
+msgstr	"Editar"
+
+msgid	"delete"
+msgstr	"Borrar"
+
+msgid	"save"
+msgstr	"Guardar"
+
+msgid	"accept"
+msgstr	"Aceptar"
+
+msgid	"cancel"
+msgstr	"Cancelar"
+
+msgid	"main"
+msgstr	"Principal"
+
+msgid	"publish"
+msgstr	"Publicar"
+
+msgid	"save-and-publish"
+msgstr	"Guardar y publicar"
+
+msgid	"close"
+msgstr	"Cerrar"
+
+msgid	"filter"
+msgstr	"Filtrar"
+
+## Dialogs
+
+msgid "active-dialog-title"
+msgstr "Activar"
+
+msgid "not-active-dialog-title"
+msgstr "Desactivar"
+
+msgid "active-dialog"
+msgstr "¿Deseas marcar a %s como activo?"
+
+msgid "not-active-dialog"
+msgstr "¿Deseas desmarcar a %s como activo?"
+
+msgid	"delete-dialog"
+msgstr	"¿Seguro que quieres borrar permanentemente el elemento %s?"
+
+msgid	"delete-dialog-title"
+msgstr	"Borrar"
+
+msgid	"delete-dialog-accept"
+msgstr	"Borrar"
+
+msgid "publish-dialog"
+msgstr "¿Deseas publicar %s?"
+
+msgid "not-publish-dialog"
+msgstr "¿Deseas quitar la publicación %s?"
+
+msgid "main-dialog-title"
+msgstr "Marcar principal"
+
+msgid "not-main-dialog-title"
+msgstr "Desmarcar principal"
+
+msgid "main-dialog"
+msgstr "¿Deseas marcar como principal %s?"
+
+msgid "not-main-dialog"
+msgstr "¿Deseas desmarcar como principal %s?"
+
+msgid	"hidden-dialog-title"
+msgstr	"Ocultar configuración"
+
+msgid	"not-hidden-dialog-title"
+msgstr	"Mostrar configuración"
+
+msgid	"hidden-dialog"
+msgstr	"¿Deseas ocultar la configuración %s?"
+
+msgid	"not-hidden-dialog"
+msgstr	"¿Deseas mostrar la configuración %s?"
+
+## Notifications
+
+msgid "save-notification"
+msgstr "%s se guardó exitosamente"
+
+msgid "delete-notification"
+msgstr "%s ha sido borrado"
+
+msgid	"active-notification"
+msgstr	"%s se marcó como activo"
+
+msgid	"not-active-notification"
+msgstr	"%s se marcó como inactivo"
+
+msgid "main-notification"
+msgstr "%s se marcó como principal"
+
+msgid "not-main-notification"
+msgstr "%s dejó de ser principal"
+
+msgid	"hidden-notification"
+msgstr	"%s se ocultó"
+
+msgid	"not-hidden-notification"
+msgstr	"%s se marcó como visible"
+
+## Pagination
+msgid	"paginate-counter"
+msgstr	"{:start} - {:end} de {:count}"
+
+msgid	"previous"
+msgstr	"Anterior"
+
+msgid	"next"
+msgstr	"Siguiente"
+
+msgid	"first-page"
+msgstr	"Primera página"
+
+msgid	"last-page"
+msgstr	"Última página"
+
+msgid	"items-per-page"
+msgstr	"Elementos por página"
+
+msgid	"go-to"
+msgstr	"Ir a"
+
+msgid	"pagination"
+msgstr	"Paginación"
+
+msgid	"pagination-prev"
+msgstr	"Anterior"
+
+msgid	"pagination-next"
+msgstr	"Siguiente"
+
+## Internationalization
+
+msgid	"locale-es"
+msgstr	"Español"
+
+msgid	"locale-en"
+msgstr	"Inglés"

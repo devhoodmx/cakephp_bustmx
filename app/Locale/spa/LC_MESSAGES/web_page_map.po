@@ -1,0 +1,11 @@
+msgid	"latitude"
+msgstr	"Latitud"
+
+msgid	"longitude"
+msgstr	"Longitud"
+
+msgid	"zoom"
+msgstr	"Zoom"
+
+msgid	"height"
+msgstr	"Altura del mapa"

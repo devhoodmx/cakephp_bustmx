@@ -1,0 +1,1 @@
+!function(n,i,t){"use strict";var o={load:function(){$(i).ready($.proxy(this.init,this))},init:function(){}};o.load(),n.hozen.app.ContactApp=o}(window,window.document);

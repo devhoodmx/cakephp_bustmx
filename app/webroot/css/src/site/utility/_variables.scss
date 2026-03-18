@@ -1,0 +1,24 @@
+// Colors
+
+$colors: (
+	'white': #FFFFFF,
+	'black': #000000,
+	'pampas':#EDEAE6,
+	'mint-green':#9EFC7B,
+	'bridal-heath':#FFFCF8,
+	'tuatara':#222221,
+	'cod-gray':#191918,
+);
+
+//Fonts 
+$SF-Pro-Display:'SF Pro Display';
+$SFProDisplay:'SFProDisplay';
+//name colors
+$pampas: map-get($colors, 'pampas');
+$black: map-get($colors, 'black');
+$white: map-get($colors, 'white');
+$mintgreen: map-get($colors, 'mint-green');
+$bridalHeath: map-get($colors, 'bridal-heath');
+$tuatara: map-get($colors, 'tuatara');
+$cod-gray:map-get($colors, 'cod-gray');
+

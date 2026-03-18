@@ -1,0 +1,6 @@
+{
+	"require": {
+		"bootstrap": "3.0.2",
+		"fontAwesome": "3.2.1"
+	}
+}

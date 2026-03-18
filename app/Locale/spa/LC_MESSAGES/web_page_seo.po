@@ -1,0 +1,17 @@
+msgid	"name"
+msgstr	"Página"
+
+msgid	"title"
+msgstr	"Título"
+
+msgid	"description"
+msgstr	"Descripción"
+
+msgid	"meta"
+msgstr	"Meta tags"
+
+msgid	"header-code"
+msgstr	"Código HTML en el encabezado"
+
+msgid	"footer-code"
+msgstr	"Código HTML en el pie de página"

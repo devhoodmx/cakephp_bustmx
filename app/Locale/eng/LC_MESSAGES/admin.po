@@ -1,0 +1,2 @@
+msgid	"page-title"
+msgstr	"%s | %s %s"

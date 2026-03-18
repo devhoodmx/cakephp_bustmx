@@ -1,0 +1,32 @@
+// Mixins
+// --------------------------------------------------
+
+@mixin fancy-button-variant($color, $background, $border, $sibling, $class) {
+	&:hover + #{$sibling+$class},
+	&:focus + #{$sibling+$class},
+	&:active + #{$sibling+$class},
+	&.active + #{$sibling+$class} {
+		background-color: $color;
+		border-color: $color;
+		color: $white;
+	}
+
+	&:active + #{$sibling+$class},
+	&.active + #{$sibling+$class},
+	.open .dropdown-toggle & + #{$sibling+$class} {
+		background-image: none;
+	}
+
+	&.disabled,
+	&[disabled] {
+		& + #{$sibling+$class},
+		&:hover + #{$sibling+$class},
+		&:focus + #{$sibling+$class},
+		&:active + #{$sibling+$class},
+		&.active + #{$sibling+$class} {
+			background-color: $white;
+			border-color: $border;
+			color: $border;
+		}
+	}
+}

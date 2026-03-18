@@ -1,0 +1,45 @@
+//
+// Callouts
+// --------------------------------------------------
+
+
+.callout {
+	background-color: $callout-default-bg;
+	margin: 0 0 20px;
+	padding: 10px;
+	padding-left: 24px;
+	position: relative;
+	@include border-radius(12px);
+
+	&:before {
+		background-color: $callout-default-border;
+		bottom: 10px;
+		content: '';
+		left: 10px;
+		position: absolute;
+		top: 10px;
+		width: 4px;
+		@include border-radius(4px);
+	}
+}
+
+// Alternate styles
+
+.callout-default {
+	@include callout-variant($callout-default-bg, $callout-default-border);
+}
+.callout-primary {
+	@include callout-variant($callout-primary-bg, $callout-primary-border);
+}
+.callout-success {
+	@include callout-variant($callout-success-bg, $callout-success-border);
+}
+.callout-info {
+	@include callout-variant($callout-info-bg, $callout-info-border);
+}
+.callout-warning {
+	@include callout-variant($callout-warning-bg, $callout-warning-border);
+}
+.callout-danger {
+	@include callout-variant($callout-danger-bg, $callout-danger-border);
+}

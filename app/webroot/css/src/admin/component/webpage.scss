@@ -1,0 +1,123 @@
+@import '../utility/base';
+
+$webpage-margin: 20px;
+
+.webpage-badge {
+	text-transform: uppercase;
+}
+// See https://material.io/tools/color/#!/, shade 400
+.webpage-badge-es {
+	background-color: #66bb6a;
+}
+.webpage-badge-en {
+	background-color: #29b6f6;
+}
+
+.webpage {
+	padding: 0 10px;
+
+	.webpage-actions {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+	}
+
+	.webpage-intent {
+		margin: 15px 0;
+		padding: 15px;
+		text-align: center;
+		border: 2px dashed #F2F2F2;
+		border-radius: 4px;
+
+		&:hover {
+			border-color: #DDDDDD;
+		}
+	}
+
+	.webpage-unit {
+		position: relative;
+		margin: 15px 0;
+		border: 2px dashed $gray;
+		border-radius: 4px;
+	}
+
+	// Section
+	.webpage-section {
+		padding: 35px 15px 0;
+
+		&.spaced {
+			margin-bottom: $webpage-margin;
+		}
+		&.centered {
+			margin: 0 40px;
+		}
+	}
+
+	// Column
+	.webpage-column {
+	}
+
+	// Elements
+	.webpage-element {
+		padding: 15px;
+
+		> .webpage-actions {
+			right: 10px;
+			z-index: 100;
+		}
+
+		&.fluid {
+			margin: 0 0 $webpage-margin 0;
+		}
+		&.center {
+			margin: 0 0 $webpage-margin 0;
+			text-align: center;
+		}
+		&.left {
+			float: left;
+			margin: 0 $webpage-margin $webpage-margin 0;
+		}
+		&.right {
+			float: right;
+			margin: 0 0 $webpage-margin $webpage-margin;
+		}
+	}
+	.webpage-image {
+		&.left, &.right {
+			> .webpage-actions {
+				left: 10px;
+				right: auto;
+			}
+		}
+		&.fluid {
+			.webpage-content img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.carousel-inner {
+			.item {
+				img {
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.webpage-text {
+	}
+	.webpage-video {
+	}
+	.webpage-code {
+		.webpage-content code {
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			width: 100%;
+		}
+	}
+
+	.webpage-break {
+		clear: both;
+	}
+}

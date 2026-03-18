@@ -1,0 +1,8 @@
+msgid	"align"
+msgstr	"Alineación"
+
+msgid	"wrap"
+msgstr	"Rodear el texto"
+
+msgid	"url"
+msgstr	"Vínculo"

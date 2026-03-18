@@ -1,0 +1,59 @@
+msgid	"username"
+msgstr	"Username"
+
+msgid	"name"
+msgstr	"Name"
+
+msgid	"first-name"
+msgstr	"Name"
+
+msgid	"last-name"
+msgstr	"Last name"
+
+msgid	"profile"
+msgstr	"Profile"
+
+msgid	"subtitle"
+msgstr	"Subtitle"
+
+msgid	"description"
+msgstr	"Description"
+
+msgid	"main-gallery"
+msgstr	"Main gallery"
+
+msgid	"background-gallery"
+msgstr	"Background gallery"
+
+msgid	"created"
+msgstr	"Created on"
+
+msgid	"picture"
+msgstr	"Picture"
+
+msgid	"price"
+msgstr	"Price"
+
+msgid	"middle-name"
+msgstr	"Middle name"
+
+msgid	"phone"
+msgstr	"Phone"
+
+msgid	"email"
+msgstr	"Email"
+
+msgid	"address"
+msgstr	"Address"
+
+msgid	"zip-code"
+msgstr	"Zip code"
+
+msgid	"total"
+msgstr	"Total"
+
+msgid	"password"
+msgstr	"Password"
+
+msgid	"password-confirmation"
+msgstr	"Password confirmation"

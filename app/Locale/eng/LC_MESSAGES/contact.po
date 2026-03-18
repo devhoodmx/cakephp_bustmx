@@ -1,0 +1,5 @@
+msgid	"success"
+msgstr	"Thank you for contacting us, we'll get in touch with you shortly."
+
+msgid	"email-title"
+msgstr	"Contact %s"

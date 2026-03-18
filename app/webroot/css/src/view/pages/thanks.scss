@@ -1,0 +1,10 @@
+@import "../../site/utility/base";
+@import "../../vendor/bootstrap-4/functions";
+@import "../../vendor/bootstrap-4/variables";
+@import "../../vendor/bootstrap-4/mixins";
+
+.thanks-section{
+    .title{
+        font-family: $SFProDisplay;
+    }
+}

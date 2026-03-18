@@ -1,0 +1,8 @@
+msgid	"success"
+msgstr	"Gracias por contactarnos, nos comunicaremos contigo en breve."
+
+msgid	"email-title"
+msgstr	"Contacto %s"
+
+msgid	"quote-email-title"
+msgstr	"Cotización %s"

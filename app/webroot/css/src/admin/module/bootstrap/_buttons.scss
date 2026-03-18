@@ -1,0 +1,73 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+	overflow: hidden;
+
+	.btn-text {
+		display: none;
+	}
+
+	&.show-text {
+		.btn-text {
+			display: inline;
+		}
+	}
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+	font-weight: 700;
+
+	[class*='fa-'], [class*='icon-'] {
+		font-size: 24px;
+		vertical-align: baseline;
+	}
+}
+.btn-sm {
+	font-weight: 400;
+
+	[class*='fa-'], [class*='icon-'] {
+		font-size: 14px;
+		vertical-align: baseline;
+	}
+}
+.btn-xs {
+	font-weight: 400;
+	border-radius: 26px;
+
+	[class*='fa-'], [class*='icon-'] {
+		font-size: 14px;
+		vertical-align: baseline;
+	}
+}
+
+
+// Custom
+// --------------------------------------------------
+
+.btn {
+	@include toggle-button-variant('main', $lightning-yellow, $white, $lightning-yellow);
+}
+
+// Contextual colors
+
+@include text-emphasis-variant('.btn-link.text-muted', $text-muted);
+
+@include text-emphasis-variant('.btn-link.text-primary', $java);
+
+@include text-emphasis-variant('.btn-link.text-success', $apple);
+
+@include text-emphasis-variant('.btn-link.text-info', $cerulean);
+
+@include text-emphasis-variant('.btn-link.text-warning', $tangerine);
+
+@include text-emphasis-variant('.btn-link.text-danger', $scarlet);

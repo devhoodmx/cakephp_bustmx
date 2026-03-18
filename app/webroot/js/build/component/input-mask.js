@@ -1,0 +1,1 @@
+!function(n,t){"use strict";var e={load:function(){$(t).ready($.proxy(this.init,this))},init:function(){var i=this;$('[data-component="input-mask"]').each(function(n,t){var e=$(t);i.render(e)})},render:function(n){"numeral"==n.data("type")&&new Cleave(n[0],{numeral:!0,stripLeadingZeroes:!1})}};e.load(),n.hozen.component.InputMask=e}(window,window.document);

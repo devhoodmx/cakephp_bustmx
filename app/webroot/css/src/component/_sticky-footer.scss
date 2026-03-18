@@ -1,0 +1,19 @@
+// See https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
+@mixin sticky-footer($header: '.doc-header', $body: '.doc-body', $footer: '.doc-footer') {
+	html,
+	body {
+		height: 100%;
+	}
+	body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#{$header},
+	#{$footer} {
+		flex-shrink: 0;
+	}
+	#{$body} {
+		flex: 1 0 auto;
+	}
+}

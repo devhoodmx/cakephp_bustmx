@@ -1,0 +1,53 @@
+/*!
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ */
+@import '../utility/base';
+
+/* Bootstrap */
+@import '../../vendor/bootstrap-4/functions';
+@import 'bootstrap-4/variables';
+@import '../../vendor/bootstrap-4/variables';
+@import '../../vendor/bootstrap-4/mixins';
+@import 'bootstrap-4/mixins';
+@import '../../vendor/bootstrap-4/root';
+@import '../../vendor/bootstrap-4/reboot';
+@import '../../vendor/bootstrap-4/type';
+@import '../../vendor/bootstrap-4/images';
+@import '../../vendor/bootstrap-4/code';
+@import '../../vendor/bootstrap-4/grid';
+@import '../../vendor/bootstrap-4/tables';
+@import '../../vendor/bootstrap-4/forms';
+@import '../../vendor/bootstrap-4/buttons';
+@import '../../vendor/bootstrap-4/transitions';
+// @import '../../vendor/bootstrap-4/dropdown';
+// @import '../../vendor/bootstrap-4/button-group';
+@import '../../vendor/bootstrap-4/input-group';
+// @import '../../vendor/bootstrap-4/custom-forms';
+@import '../../vendor/bootstrap-4/nav';
+@import '../../vendor/bootstrap-4/navbar';
+@import '../../vendor/bootstrap-4/card';
+// @import '../../vendor/bootstrap-4/breadcrumb';
+// @import '../../vendor/bootstrap-4/pagination';
+// @import '../../vendor/bootstrap-4/badge';
+// @import '../../vendor/bootstrap-4/jumbotron';
+@import '../../vendor/bootstrap-4/alert';
+// @import '../../vendor/bootstrap-4/progress';
+// @import '../../vendor/bootstrap-4/media';
+// @import '../../vendor/bootstrap-4/list-group';
+@import '../../vendor/bootstrap-4/close';
+// @import '../../vendor/bootstrap-4/toasts';
+@import '../../vendor/bootstrap-4/modal';
+// @import '../../vendor/bootstrap-4/tooltip';
+// @import '../../vendor/bootstrap-4/popover';
+@import '../../vendor/bootstrap-4/carousel';
+//@import '../../vendor/bootstrap-4/spinners';
+@import '../../vendor/bootstrap-4/utilities';
+@import '../../vendor/bootstrap-4/print';
+
+/* Custom */
+@import 'bootstrap-4/reboot';
+@import 'bootstrap-4/type';
+@import 'bootstrap-4/forms';
+@import 'bootstrap-4/buttons';
+@import 'bootstrap-4/alert';
+@import 'bootstrap-4/carousel';

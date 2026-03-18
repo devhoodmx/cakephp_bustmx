@@ -1,0 +1,6 @@
+$font-size-root: 16 !default;
+
+// Convert px to rem
+@function rem($px) {
+	@return ($px / $font-size-root) * 1rem;
+}

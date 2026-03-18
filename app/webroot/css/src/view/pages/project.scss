@@ -1,0 +1,197 @@
+@import "../../site/utility/base";
+@import "../../vendor/bootstrap-4/functions";
+@import "../../vendor/bootstrap-4/variables";
+@import "../../vendor/bootstrap-4/mixins";
+
+/* view project */
+.section-project {
+	padding-top: rem(50);
+	padding-bottom: rem(50);
+	.row-video {
+		margin-bottom: rem(30);
+		.main-media{
+			.media{
+				border-radius: rem(30);
+				height: 75vw;
+				object-fit: cover;
+				object-position: center;
+			}
+		}
+	}
+	.row-information {
+		margin-bottom: rem(40);
+		.name-company {
+			font-family: $SFProDisplay;
+			font-weight: 600;
+			font-size: rem(22);
+		}
+
+		.url-project,
+		.title-project {
+			font-size: rem(20);
+			font-family: $SFProDisplay;
+			font-weight: 100;
+			line-height: 1;
+		}
+		.description {
+			margin-top: rem(30);
+			font-size: rem(20);
+		}
+	}
+	.row-gallery {
+		.col-gallery {
+			display: flex;
+			flex-direction: column;
+			row-gap: rem(30);
+			.media-gallery{
+				border-radius: rem(25);
+				object-fit: cover;
+				object-position: center;
+				height: 75vw;
+			}
+		}
+		
+	}
+
+	.final-text{
+		margin-top: rem(50);
+		.content{
+			font-size: rem(20);
+		}
+	}
+    .foot {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: rem(50);
+        .btn-view-more {
+            width: rem(150);
+            height: rem(150);
+            font-size: rem(15) !important ;
+            border-radius: 100%;
+            outline: none;
+            border: 0;
+            border-radius: 100%;
+            background-color: transparent;
+            background-image: url("/img/site/bust/bg-green-gradient.svg");
+            background-position: center center;
+            background-size: 100% 100%;
+            font-weight: bold;
+            text-transform: uppercase; 
+            line-height: 1;
+        }
+    }
+}
+@include media-breakpoint-up(lg) {
+	/* view project */
+	.section-project {
+		padding-top: rem(100);
+		padding-bottom: rem(300);
+		.row-video {
+			margin-bottom: rem(50);
+			.main-media{
+				.media{
+					height: rem(700);
+				}
+			}
+		}
+		.row-information {
+			margin-bottom: rem(250);
+			.name-company {
+				font-size: rem(45);
+			}
+
+			.title-project,
+			.url-project {
+				font-size: rem(30);
+				margin-bottom: rem(10);
+			}
+			.title-project {
+				margin-bottom: rem(10);
+			}
+			.description {
+				margin-top: rem(200);
+			}
+		}
+		.row-gallery {
+			.col-scroll {
+				.scroll {
+					$sizeSpace: rem(50);
+					padding: $sizeSpace 0;
+					height: calc(100% - 50px);
+					margin-top: 50px;
+					width: 100%;
+
+					display: flex;
+					position: relative;
+					justify-content: center;
+					align-items: flex-start;
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						margin-left: auto;
+						margin-right: auto;
+						height: 100%;
+						width: rem(2);
+						background-color: $black;
+						z-index: 1;
+					}
+					.star {
+						display: block;
+						height: rem(70);
+						width: rem(70);
+						background-image: url("/img/site/icons/black-Star.svg");
+						background-repeat: no-repeat;
+						background-size: 100% 100%;
+					}
+					.circle {
+						width: rem(30);
+						height: rem(30);
+						display: block;
+						border-radius: 100%;
+						background-color: $mintgreen;
+					}
+					.container-icons {
+						position: sticky;
+						top: $sizeSpace;
+						bottom: $sizeSpace;
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						align-items: center;
+						row-gap: rem(20);
+						z-index: 2;
+					}
+				}
+			}
+			.card-margin {
+				margin-top: rem(100);
+			}
+			.col-gallery {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				row-gap: rem(35);
+				column-gap: rem(35);
+				.media-gallery{
+					
+					height: rem(350);
+				}
+			}
+			
+		}
+        .foot {
+            margin-top: rem(200);
+            
+            .btn-view-more {
+                width: rem(200);
+                height: rem(200);
+                font-size: rem(18) !important ;
+                
+            }
+        }
+	}
+}

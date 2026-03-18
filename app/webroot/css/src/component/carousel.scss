@@ -1,0 +1,33 @@
+@import '../vendor/bootstrap-4/functions';
+@import '../vendor/bootstrap-4/variables';
+@import '../vendor/bootstrap-4/mixins';
+@import '../utility/functions';
+
+.carousel-component {
+	.carousel-image {
+		display: block;
+		width: 100%;
+	}
+	.carousel-description {
+		display: none;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.carousel-component {
+		.carousel-description {
+			display: block;
+		}
+
+		&.cover {
+			.carousel-item {
+				height: rem(450);
+				background-size: cover;
+				background-position: center;
+			}
+			.carousel-image {
+				display: none;
+			}
+		}
+	}
+}

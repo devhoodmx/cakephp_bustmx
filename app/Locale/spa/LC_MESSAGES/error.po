@@ -1,0 +1,76 @@
+## Exception Error
+msgid	"not-found"
+msgstr	"No se encontró la vista"
+
+msgid	"bad-request"
+msgstr	"Ocurrió un error en la petición"
+
+msgid	"method-not-allowed"
+msgstr	"La operación que desea realizar no es posible"
+
+## Fields Error
+msgid	"not-empty"
+msgstr	"El campo no puede quedar vacío"
+
+msgid	"notEmpty"
+msgstr	"El campo no puede quedar vacío"
+
+msgid	"not-blank"
+msgstr	"El campo no puede quedar vacío"
+
+msgid	"notBlank"
+msgstr	"El campo no puede quedar vacío"
+
+msgid "email"
+msgstr "Formato de correo inválido"
+
+msgid "email-error"
+msgstr "Formato de correo inválido"
+
+msgid "8-characters-length"
+msgstr "La longitud mínima es de 8 carácteres"
+
+msgid "is-equal-to-field"
+msgstr "Los campos no coinciden"
+
+msgid	"unique"
+msgstr	"Este valor no está disponible"
+
+msgid	"is-unique"
+msgstr	"Este valor no está disponible"
+
+msgid "unique-username"
+msgstr "Nombre de usuario no disponible"
+
+msgid "unique-email"
+msgstr "Correo electrónico no disponible"
+
+msgid	"url"
+msgstr 	"Formato incorrecto. Intenta agregando el protocolo http://"
+
+msgid	"in-list"
+msgstr	"Selecciona una opción"
+
+msgid	"password-incorrect"
+msgstr	"La contraseña es incorrecta"
+
+msgid	"invalid-access"
+msgstr	"Usuario o contraseña incorrectos"
+
+msgid	"numeric"
+msgstr	"Ingresa un número"
+
+msgid	"natural-number"
+msgstr	"Ingresa un número entero"
+
+msgid	"unique-route"
+msgstr	"La ruta que ingresaste no está disponible"
+
+msgid	"route-chars"
+msgstr	"La ruta solo puede tener letras en minúsculas (a-z), números (0-9), guiones (-) o barras (/)"
+
+msgid	"is-internal"
+msgstr	"Elige un elemento de la lista"
+
+msgid	"recaptcha"
+msgstr	"Completa el reCaptcha"

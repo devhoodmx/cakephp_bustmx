@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <html>
+<head>
+  <style>
+    #iframeContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+    }
+  </style>
+<body>
+  <div id="iframeContainer">
+    <iframe width="1500" height="1080" src="https://lookerstudio.google.com/embed/u/0/reporting/9db513f7-1135-4466-b86b-b11f9cdea67c/page/VgD" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    // Array de URLs de los sitios web
+    var websites = [
+      "https://lookerstudio.google.com/embed/reporting/9db513f7-1135-4466-b86b-b11f9cdea67c/page/p_8wuxzcrf6c",
+      "https://lookerstudio.google.com/embed/reporting/9db513f7-1135-4466-b86b-b11f9cdea67c/page/p_uh70anvj8c",
+      "https://lookerstudio.google.com/embed/reporting/51a53ccb-36b5-4b06-b5f3-241fb512f7b7/page/p_bvmnzdu96c",
+      "https://lookerstudio.google.com/embed/reporting/51a53ccb-36b5-4b06-b5f3-241fb512f7b7/page/p_wipasxv96c",
+      "https://lookerstudio.google.com/embed/reporting/51a53ccb-36b5-4b06-b5f3-241fb512f7b7/page/VgD",
+      "https://lookerstudio.google.com/embed/u/0/reporting/9db513f7-1135-4466-b86b-b11f9cdea67c/page/p_9hc65upf6c"
+    ];
+
+    // Variables de control
+    var currentWebsiteIndex = 0;
+    var iframeContainer = document.getElementById("iframeContainer");
+
+    // Función para cambiar el iframe
+    function changeIframe() {
+      // Incrementar el índice del sitio web actual
+      currentWebsiteIndex++;
+
+      // Si se alcanza el final del array, volver al principio
+      if (currentWebsiteIndex >= websites.length) {
+        currentWebsiteIndex = 0;
+      }
+
+      // Obtener la URL del sitio web actual
+      var currentWebsite = websites[currentWebsiteIndex];
+
+      // Actualizar el iframe con la nueva URL
+      iframeContainer.innerHTML = '<iframe src="' + currentWebsite + '" width="1500" height="1080"></iframe>';
+    }
+
+    // Iniciar la secuencia de cambio de iframes cada 20 segundos
+    setInterval(changeIframe, 200000);
+  </script>
+</body>
+</html>

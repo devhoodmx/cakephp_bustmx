@@ -1,0 +1,101 @@
+@import "../../site/utility/base";
+@import "../../vendor/bootstrap-4/functions";
+@import "../../vendor/bootstrap-4/variables";
+@import "../../vendor/bootstrap-4/mixins";
+
+.doc-header {
+
+	.bg-fixed{
+		background-color: $black;
+	}
+	.container-menu{
+		border-bottom: 2px solid $white;
+		
+	}
+	.wrapper-menu{
+		.menu-btn,.menu-star,.modal-btn{
+			filter: invert(1);
+		}
+	}
+	.container-data-information{
+		filter: invert(1);
+	}
+}
+.page-section {
+	background-color: $black;
+	color: $white;
+	padding-top: rem(50);
+	padding-bottom: rem(50);
+	h1 {
+		font-family: $SF-Pro-Display;
+		font-size: rem(35);
+		font-weight: bold;
+		font-style: normal;
+		text-transform: uppercase;
+		margin-bottom: rem(50);
+		span {
+			background: $mintgreen;
+			font-family: $SFProDisplay;
+			font-weight: 100;
+			color: $black;
+		}
+	}
+
+	h3 {
+		font-size: rem(25);
+	}
+	strong {
+		font-weight: bold;
+	}
+
+	p {
+		font-size: rem(17);
+		font-family: $SFProDisplay;
+		font-weight: 100;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.page-section {
+        padding-top: rem(100);
+        padding-bottom: rem(350);
+		position: relative;
+        overflow-x: hidden;
+        
+		&::after {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: rem(750);
+			height: rem(500);
+            margin-top: rem(50);
+			background-image: url(/img/site/pages/privacy/background-privacy.svg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position-x: left;
+			background-position-y: center;
+			transform: translateX(35%);
+           
+		}
+
+		h1 {
+			max-width: rem(600);
+			font-size: rem(115);
+			margin-bottom: rem(280);
+			span {
+				padding: 0 rem(20);
+			}
+		}
+
+		h3 {
+			font-size: rem(40);
+			margin-bottom: rem(20);
+		}
+
+		p {
+			font-size: rem(25);
+		}
+	}
+}

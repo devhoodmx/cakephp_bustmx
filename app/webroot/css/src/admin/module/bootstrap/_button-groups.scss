@@ -1,0 +1,32 @@
+//
+// Button groups
+// --------------------------------------------------
+
+
+// Vertical button groups
+// ----------------------
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+	border: {
+		left: none;
+		right: none;
+	}
+}
+// Remove right/left border when it's the first/last item
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+	border-right: none;
+}
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+	border-left: none;
+}
+
+
+// Custom
+// ----------------------
+
+// Optional: Group multiple toolbars together for a group
+.toolbar-group {
+	margin-bottom: 32px;
+}

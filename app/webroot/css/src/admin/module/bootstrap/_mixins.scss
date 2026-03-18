@@ -1,0 +1,90 @@
+// Mixins
+// --------------------------------------------------
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+@mixin button-variant($color, $background, $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	&:focus,
+	&.focus {
+		color: $white;
+		background-color: $color;
+		border-color: $color;
+	}
+	&:hover {
+		color: $white;
+		background-color: $color;
+		border-color: $color;
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $white;
+		background-color: $color;
+		border-color: $color;
+
+		&:hover,
+		&:focus,
+		&.focus {
+			color: $white;
+			background-color: $color;
+			border-color: $color;
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] {
+		&,
+		&:hover,
+		&:focus,
+		&.focus {
+			color: $border;
+			background-color: $white;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+// Custom
+
+// Badges
+@mixin badge-variant($background) {
+	background-color: $background;
+
+	&[href] {
+		&:hover,
+		&:focus {
+			background-color: darken($background, 10%);
+		}
+	}
+}
+
+// Callouts
+@mixin callout-variant($background, $border) {
+	background-color: $background;
+
+	&:before {
+		background-color: $border;
+	}
+}
+
+@mixin toggle-button-variant($field, $color, $background, $border) {
+	&[data-toggle-field=#{$field}] {
+		@include button-variant($color, $background, $border);
+	}
+}

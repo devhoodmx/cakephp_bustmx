@@ -1,0 +1,44 @@
+msgid	"es-name"
+msgstr	"Título"
+
+msgid	"en-name"
+msgstr	"Título en inglés"
+
+msgid	"es-url"
+msgstr	"Vínculo"
+
+msgid	"en-url"
+msgstr	"Vínculo en inglés"
+
+msgid	"internal-id"
+msgstr	"Página interna"
+
+msgid	"parent-id"
+msgstr	"Pertenece a"
+
+msgid	"type-internal"
+msgstr	"Interno"
+
+msgid	"type-external"
+msgstr	"Externo"
+
+msgid	"type-header"
+msgstr	"Encabezado"
+
+msgid	"position-main"
+msgstr	"Principal"
+
+msgid	"position-header"
+msgstr	"Encabezado"
+
+msgid	"position-footer"
+msgstr	"Pie de página"
+
+msgid	"internal-pages"
+msgstr	"Páginas"
+
+msgid	"internal-sections"
+msgstr	"Secciones"
+
+msgid	"target"
+msgstr	"Abrir vínculo en otra ventana"

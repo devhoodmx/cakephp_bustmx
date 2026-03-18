@@ -1,0 +1,89 @@
+@import '../../utility/base';
+
+.form-control {
+	// Placeholder
+	&::placeholder {
+	}
+}
+
+// Errors
+.text,
+.file,
+.email,
+.number,
+.tel,
+.textarea {
+	.form-error {
+		border-color: theme-color('danger');
+	}
+}
+.error-message {
+	margin-top: rem(4);
+	color: theme-color('danger');
+}
+
+// Checkbox
+.checkbox {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+
+	input {
+		width: auto;
+		height: auto;
+		margin-right: rem(6);
+
+		+ label {
+			margin-bottom: 0;
+		}
+	}
+
+	.error-message {
+		width: 100%;
+	}
+}
+// Radio
+.radio {
+	input {
+		float: left;
+		clear: left;
+		width: auto;
+		height: auto;
+		margin-top: rem(4);
+		margin-right: rem(6);
+
+		+ label {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&.input-inline {
+		> div {
+			display: flex;
+		}
+
+		input {
+			float: none;
+			clear: none;
+
+			+ label {
+				width: auto;
+				margin-right: rem(12);
+			}
+		}
+	}
+}
+
+// Date
+.bootstrap-datepicker-component {
+	.input-group-addon {
+		@extend .input-group-append;
+
+		> i {
+			@extend .input-group-text;
+			width: auto !important;
+			height: auto !important;
+		}
+	}
+}

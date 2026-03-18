@@ -1,0 +1,72 @@
+msgid	"drag-supported"
+msgstr	"Arrastra tu archivo o haz %s para seleccionarlo"
+
+msgid	"drag-unsupported"
+msgstr	"Haz %s para seleccionar un archivo"
+
+msgid	"click-here"
+msgstr	"clic aquí"
+
+msgid	"edit-media"
+msgstr	"Editar"
+
+msgid	"replace-media"
+msgstr	"Reemplazar"
+
+msgid	"background"
+msgstr 	"Imagen de fondo"
+
+msgid	"title"
+msgstr	"Título"
+
+msgid	"subtitle"
+msgstr	"Subtítulo"
+
+msgid	"image"
+msgstr	"Imagen"
+
+msgid	"svg"
+msgstr	"Vector"
+
+msgid	"file"
+msgstr	"Archivo"
+
+msgid	"audio"
+msgstr	"Audio"
+
+msgid	"video"
+msgstr	"Video"
+
+msgid	"alt"
+msgstr	"Alt"
+
+## Errors
+msgid	"invalid"
+msgstr	"invalid"
+
+msgid	"fileSize"
+msgstr	"fileSize"
+
+msgid	"invalidExtension"
+msgstr	"invalidExtension"
+
+msgid	"processError"
+msgstr	"processError"
+
+msgid	"unsupportedType"
+msgstr	"unsupportedType"
+
+msgid	"maliciousUpload"
+msgstr	"maliciousUpload"
+
+msgid	"uploadError"
+msgstr	"uploadError"
+
+msgid	"shared-dialog-title"
+msgstr	"Crear vínculo"
+
+msgid	"shared-notification"
+msgstr	"Vínculo para compartir creado"
+
+msgid	"not-shared-notification"
+msgstr	"Vínculo para compartir eliminado"

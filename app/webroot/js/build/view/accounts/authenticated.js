@@ -1,0 +1,1 @@
+!function(a,b){"use strict";var c={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){}};c.load(),a.hozen.view.AuthenticatedView=c}(window,window.document);

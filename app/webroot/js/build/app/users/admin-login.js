@@ -1,0 +1,1 @@
+!function(t,i,n){"use strict";var a={load:function(){$(i).ready($.proxy(this.init,this))},init:function(){$.getJSON("https://media.affenbits.com/",(function(t){if(t.data&&t.data.items.length){var i=t.data.items,n=i[Math.floor(Math.random()*i.length)].Media.url;$("html").css("backgroundImage","url("+n+")")}}))}};a.load(),t.hozen.app.AdminLoginApp=a}(window,window.document);
