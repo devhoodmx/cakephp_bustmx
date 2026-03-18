@@ -300,7 +300,7 @@ class AppController extends Controller {
 			}
 
 			// Media asynchronous requests
-			if ($controller === 'media' && ($this->request->is('ajax') || in_array($this->action, ['admin_video', 'admin_download', 'admin_toggle_field', 'admin_share']))) {
+			if ($controller === 'media' && ($this->request->is('ajax') || in_array($this->action, ['admin_video', 'admin_download', 'admin_toggle_field', 'admin_share', 'admin_save_poster']))) {
 				return true;
 			}
 

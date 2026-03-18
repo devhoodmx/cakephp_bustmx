@@ -34,7 +34,13 @@ $this->assign('navItemKey', 'project');
                     <?php if ($project['MediaCover']['format'] != 'mp4') : ?>
                         <img class="img-fluid w-100 media" src="<?= $project['MediaCover']['url'] ?>" alt="<?= $project['MediaCover']['alt'] ?>">
                     <?php else : ?>
-                        <video class="img-fluid w-100 media" src="<?= $videoSrc ?>" controls></video>
+                        <?php
+                        $coverPoster = '';
+                        if (!empty($project['MediaCover']['poster_key'])) {
+                            $coverPoster = '/files/media/image/poster_' . $project['MediaCover']['poster_key'] . '.' . $project['MediaCover']['poster_format'];
+                        }
+                        ?>
+                        <video class="img-fluid w-100 media" src="<?= $videoSrc ?>" controls<?= !empty($coverPoster) ? ' poster="' . $coverPoster . '"' : '' ?>></video>
                     <?php endif; ?>
 
                 </div>
@@ -104,7 +110,13 @@ $this->assign('navItemKey', 'project');
                         );
                         ?>
                     <?php else : ?>
-                        <video data-aos="fade-up" data-aos-duration="1000"  class="img-fluid w-100 media-gallery <?= $classMargin ?>" src="<?= $videoSrc ?>" controls></video>
+                        <?php
+                        $galleryPoster = '';
+                        if (!empty($project['MediaGallery'][$key]['poster_key'])) {
+                            $galleryPoster = '/files/media/image/poster_' . $project['MediaGallery'][$key]['poster_key'] . '.' . $project['MediaGallery'][$key]['poster_format'];
+                        }
+                        ?>
+                        <video data-aos="fade-up" data-aos-duration="1000" class="img-fluid w-100 media-gallery <?= $classMargin ?>" src="<?= $videoSrc ?>" controls<?= !empty($galleryPoster) ? ' poster="' . $galleryPoster . '"' : '' ?>></video>
                     <?php endif; ?>
 
                 <?php endforeach; ?>

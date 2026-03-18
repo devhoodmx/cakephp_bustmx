@@ -339,5 +339,73 @@ class MediaController extends AppController {
 		}
 	}
 
+	public function admin_save_poster($id = null) {
+		if (empty($id)) {
+			throw new BadRequestException();
+		}
+
+		$media = $this->Media->find('first', [
+			'conditions' => ['Media.id' => $id, 'Media.type' => 'video'],
+			'contain' => false
+		]);
+
+		if (empty($media)) {
+			throw new NotFoundException();
+		}
+
+		$this->autoRender = false;
+		$this->response->type('json');
+
+		if (empty($_FILES['poster']['tmp_name']) || $_FILES['poster']['error'] !== UPLOAD_ERR_OK) {
+			echo json_encode(['success' => false, 'error' => 'No se recibió el archivo.']);
+			return;
+		}
+
+		$finfo = new finfo(FILEINFO_MIME_TYPE);
+		$allowedTypes = ['image/jpeg' => 'jpg', 'image/png' => 'png'];
+		$mimeType = $finfo->file($_FILES['poster']['tmp_name']);
+
+		if (!isset($allowedTypes[$mimeType])) {
+			echo json_encode(['success' => false, 'error' => 'Formato inválido. Solo JPG o PNG.']);
+			return;
+		}
+
+		$ext = $allowedTypes[$mimeType];
+		$hash = md5(uniqid('poster', true) . $_FILES['poster']['tmp_name']);
+		$filename = 'poster_' . $hash . '.' . $ext;
+		$targetPath = WWW_ROOT . 'files' . DS . 'media' . DS . 'image' . DS . $filename;
+
+		if (!move_uploaded_file($_FILES['poster']['tmp_name'], $targetPath)) {
+			echo json_encode(['success' => false, 'error' => 'Error al guardar el archivo.']);
+			return;
+		}
+
+		$existing = empty($media['Media']['extra']) ? [] : json_decode($media['Media']['extra'], true);
+		if (!is_array($existing)) {
+			$existing = [];
+		}
+
+		// Eliminar poster anterior si existe
+		if (!empty($existing['poster_key']) && !empty($existing['poster_format'])) {
+			$oldFile = WWW_ROOT . 'files' . DS . 'media' . DS . 'image' . DS . 'poster_' . $existing['poster_key'] . '.' . $existing['poster_format'];
+			if (file_exists($oldFile)) {
+				@unlink($oldFile);
+			}
+		}
+
+		$existing['poster_key'] = $hash;
+		$existing['poster_format'] = $ext;
+
+		$this->Media->id = $id;
+		if ($this->Media->saveField('extra', json_encode($existing))) {
+			echo json_encode([
+				'success' => true,
+				'poster_url' => '/files/media/image/' . $filename
+			]);
+		} else {
+			echo json_encode(['success' => false, 'error' => 'Error al guardar en base de datos.']);
+		}
+	}
+
 }
 ?>

@@ -125,6 +125,68 @@ $from = isset($from) ? $from : null;
 		<?php endif ?>
 	</div>
 
+	<?php if ($mediaItem['type'] == 'video' && empty($viewOnly)) : ?>
+	<div class="poster-section" style="padding:4px 6px">
+		<?php if (!empty($mediaItem['poster_key'])) : ?>
+			<img class="poster-preview img-fluid"
+				src="/files/media/image/poster_<?php echo $mediaItem['poster_key'] ?>.<?php echo $mediaItem['poster_format'] ?>"
+				style="max-height:50px;width:100%;object-fit:cover;margin-bottom:3px">
+		<?php endif ?>
+		<label class="btn btn-xs btn-default btn-block mb-0 app-poster-upload-label" style="cursor:pointer;font-size:11px">
+			<i class="fa fa-image"></i>
+			<?php echo empty($mediaItem['poster_key']) ? 'Asignar portada' : 'Cambiar portada' ?>
+			<input type="file"
+				class="app-poster-upload"
+				accept="image/jpeg,image/png"
+				data-media-id="<?php echo $mediaItem['id'] ?>"
+				style="display:none">
+		</label>
+	</div>
+	<script>
+	(function() {
+		if (document._posterUploadBound) return;
+		document._posterUploadBound = true;
+		document.addEventListener('change', function(e) {
+			var input = e.target;
+			if (!input.classList.contains('app-poster-upload')) return;
+			if (!input.files || !input.files.length) return;
+			var mediaId = input.getAttribute('data-media-id');
+			var label = input.closest('.app-poster-upload-label');
+			var section = input.closest('.poster-section');
+			var originalHtml = label.innerHTML;
+			label.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Subiendo...';
+			var formData = new FormData();
+			formData.append('poster', input.files[0]);
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', '/admin/media/save_poster/' + mediaId);
+			xhr.onload = function() {
+				try {
+					var data = JSON.parse(xhr.responseText);
+					if (data.success) {
+						var preview = section.querySelector('.poster-preview');
+						if (!preview) {
+							preview = document.createElement('img');
+							preview.className = 'poster-preview img-fluid';
+							preview.style.cssText = 'max-height:50px;width:100%;object-fit:cover;margin-bottom:3px';
+							section.insertBefore(preview, section.firstChild);
+						}
+						preview.src = data.poster_url;
+						label.innerHTML = '<i class="fa fa-image"></i> Cambiar portada<input type="file" class="app-poster-upload" accept="image/jpeg,image/png" data-media-id="' + mediaId + '" style="display:none">';
+					} else {
+						label.innerHTML = originalHtml;
+						alert(data.error || 'Error al subir la portada.');
+					}
+				} catch(err) {
+					label.innerHTML = originalHtml;
+				}
+			};
+			xhr.onerror = function() { label.innerHTML = originalHtml; };
+			xhr.send(formData);
+		});
+	})();
+	</script>
+	<?php endif ?>
+
 	<div class='media-data flex-fill' data-media-name='<?php echo $mediaItem['name'] ?>'>
 		<span class='media-name'><?php echo $mediaItem['name'] ?></span>
 		<span class='media-size'><?php echo empty($mediaItem['size']) ? '' : CakeNumber::toReadableSize($mediaItem['size']) ?></span>

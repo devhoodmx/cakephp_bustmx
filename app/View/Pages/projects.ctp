@@ -63,7 +63,13 @@ $this->assign('navItemKey', 'projects');
 						<?php if ($project['MediaCover']['format'] != 'mp4') : ?>
 							<img class="img-fluid img-project" src="<?= $project['MediaCover']['url'] ?>" alt="<?= $project['MediaCover']['alt'] ?>">
 						<?php else : ?>
-							<video class="video-project" src="<?= $videoSrc ?>" controls></video>
+							<?php
+							$coverPoster = '';
+							if (!empty($project['MediaCover']['poster_key'])) {
+								$coverPoster = '/files/media/image/poster_' . $project['MediaCover']['poster_key'] . '.' . $project['MediaCover']['poster_format'];
+							}
+							?>
+							<video class="video-project" src="<?= $videoSrc ?>" controls<?= !empty($coverPoster) ? ' poster="' . $coverPoster . '"' : '' ?>></video>
 						<?php endif; ?>
 					</div>
                 </div>

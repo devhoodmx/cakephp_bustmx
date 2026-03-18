@@ -796,6 +796,20 @@ class MediaBehavior extends ModelBehavior {
 
 
 							foreach ($setResults as $resultKey => $setResult) {
+								// Spread all extra JSON fields unconditionally
+								if (!empty($setResult['extra'])) {
+									$allExtras = json_decode($setResult['extra'], true);
+									if (is_array($allExtras)) {
+										foreach ($allExtras as $extraKey => $extraValue) {
+											if ($isArray) {
+												$results[$key][$collection['mediaField']][$resultKey][$extraKey] = $extraValue;
+											} else {
+												$results[$key][$collection['mediaField']][$extraKey] = $extraValue;
+											}
+										}
+									}
+								}
+
 								if (!empty($settings[$Model->alias][$collection['mediaCollection']]['mediaAttributes'][$setResult['type']]['fields'])) {
 									$attributes = $settings[$Model->alias][$collection['mediaCollection']]['mediaAttributes'][$setResult['type']]['fields'];
 
@@ -803,7 +817,7 @@ class MediaBehavior extends ModelBehavior {
 
 									foreach ($attributes as $attribute => $attributeDesc) {
 										if (!isset($setResult[$attribute])) {
-											$attributeValue = !empty($extra[$attribute]) ? $extra[$attribute] : null;
+											$attributeValue = !empty($extras[$attribute]) ? $extras[$attribute] : null;
 											if ($isArray) {
 												$results[$key][$collection['mediaField']][$resultKey][$attribute] = $attributeValue;
 											} else {
