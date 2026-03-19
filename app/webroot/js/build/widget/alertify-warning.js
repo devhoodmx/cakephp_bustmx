@@ -1,1 +1,1 @@
-!function(){"use strict";alertify.warning=alertify.extend("warning")}(window,window.document);
+!function(n,i,t){"use strict";alertify.warning=alertify.extend("warning")}(window,window.document);

@@ -1,1 +1,1 @@
-!function(a,b){"use strict";var c={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){}};c.load(),a.hozen.view.AnonymousView=c}(window,window.document);
+!function(i,n,o){"use strict";var t={load:function(){$(n).ready($.proxy(this.init,this))},init:function(){}};t.load(),i.hozen.view.AnonymousView=t}(window,window.document);

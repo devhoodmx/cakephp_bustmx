@@ -1,1 +1,1 @@
-!function(a,b){"use strict";var c={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){}};c.load(),a.hozen.view.Template=c}(window,window.document);
+!function(i,n,t){"use strict";var o={load:function(){$(n).ready($.proxy(this.init,this))},init:function(){}};o.load(),i.hozen.view.Template=o}(window,window.document);

@@ -1,1 +1,1 @@
-!function(a,b,c){"use strict";var d=hozen.config.editor;d.Toolbars,d.Dialogs;d.Configuration.extend("default",{removeButtons:"Anchor",contentsCss:""})}(window,window.document);
+!function(o,n,t){"use strict";var e=hozen.config.editor;e.Toolbars,e.Dialogs;e.Configuration.extend("default",{removeButtons:"Anchor",contentsCss:""})}(window,window.document);

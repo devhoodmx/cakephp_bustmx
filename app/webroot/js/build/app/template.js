@@ -1,1 +1,1 @@
-!function(a,b){"use strict";var c=a.hozen;c.widget.BlackHole;var d={load:function(){$(b).ready($.proxy(this.init,this))},init:function(){},_onClick:function(){}};d.load(),a.hozen.app.TemplateApp=d}(window,window.document);
+!function(n,i,o){"use strict";n.hozen.widget.BlackHole;var t={load:function(){$(i).ready($.proxy(this.init,this))},init:function(){},_onClick:function(n){}};t.load(),n.hozen.app.TemplateApp=t}(window,window.document);
