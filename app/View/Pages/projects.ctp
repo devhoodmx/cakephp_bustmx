@@ -14,8 +14,20 @@ $this->assign('navItemKey', 'projects');
 
 <section class="section-projects bg-black">
     <div class="container">
+
+        <?php if (!empty($categories)) : ?>
+            <div class="row row-filters">
+                <div class="col-12 container-filters">
+                    <button class="btn-filter active" data-filter="all">Todos</button>
+                    <?php foreach ($categories as $categoryId => $categoryName) : ?>
+                        <button class="btn-filter" data-filter="<?= $categoryId ?>"><?= h($categoryName) ?></button>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <?php foreach($projects as $key=>$project):?>
-            <div class="row" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="row project-item" data-aos="fade-up" data-aos-duration="1000" data-category="<?= !empty($project['Category']['id']) ? $project['Category']['id'] : '' ?>">
                 <div class="col-lg-5 col-info order-1 order-lg-0">
                    <div class="info">
                         <div class="name-company text-white mb-2">

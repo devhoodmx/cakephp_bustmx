@@ -212,6 +212,8 @@ class PagesController extends AppController {
 
 	public function projects(){
 		$this->loadModel('Project');
+		$this->loadModel('Category');
+
 		$projects = $this->Project->find(
 			'all',
 			array(
@@ -221,7 +223,13 @@ class PagesController extends AppController {
 				'order' => 'Project.id ASC',
 			)
 		);
-		$this->set(compact(['projects']));
+
+		$categories = $this->Category->find('list', array(
+			'conditions' => array('Category.core' => false),
+			'order' => 'Category.name ASC'
+		));
+
+		$this->set(compact(['projects', 'categories']));
 	}
 	public function project($id = null, $name = null){
 		$this->loadModel('Project');

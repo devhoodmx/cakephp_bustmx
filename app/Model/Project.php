@@ -12,6 +12,10 @@ class Project extends AppModel {
 	
 	);
 
+	public $belongsTo = array(
+		'Category'
+	);
+
     public $actsAs = array(
 		'Media' => array(
 			'cover' => array(

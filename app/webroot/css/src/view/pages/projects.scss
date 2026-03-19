@@ -25,7 +25,39 @@
 .section-projects {
 	padding-top: rem(50);
 	padding-bottom: rem(50);
-	.row:not(:last-child) {
+
+	.container-filters {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(10);
+		margin-bottom: rem(50);
+
+		.btn-filter {
+			background: transparent;
+			border: 1px solid $white;
+			color: $white;
+			padding: rem(6) rem(20);
+			border-radius: rem(30);
+			cursor: pointer;
+			font-size: rem(14);
+			font-family: $SFProDisplay;
+			transition: background 0.2s, color 0.2s;
+
+			&:hover,
+			&.active {
+				background: $white;
+				color: $black;
+			}
+		}
+	}
+
+	.project-item {
+		&.project-hidden {
+			display: none !important;
+		}
+	}
+
+	.row:not(:last-child):not(.row-filters) {
 		margin-bottom: rem(50);
 	}
 	.col-media {
@@ -82,7 +114,7 @@
 	.section-projects {
 		padding-top: rem(100);
 		padding-bottom: rem(100);
-		.row:not(:last-child) {
+		.row:not(:last-child):not(.row-filters) {
 			margin-bottom: rem(300);
 		}
 		.col-media {

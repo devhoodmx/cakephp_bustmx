@@ -10,6 +10,11 @@ $config = [
 			'main' => array(
 				'name' => 'text',
 				'company' => 'text',
+				'category_id' => array(
+					'type' => 'select',
+					'label' => 'Categoría',
+					'empty' => 'Sin categoría'
+				),
 				'active' => array(
 					'type' => 'radio',
 					'options' => array('1' => 'Si', '0' => 'No'),
@@ -38,12 +43,12 @@ $config = [
             ),
 		]
 	],
-    'findParams' => ['contain' => ['Media']],
+    'findParams' => ['contain' => ['Media', 'Category']],
 	'views' => [
 		'admin_index' => [
 			'findParams' => array(
 				'limit' => 25,
-                'contain' => array('Media'),
+                'contain' => array('Media', 'Category'),
 				'order' => [
 					'Project.id' => 'DESC'
 				]
@@ -52,6 +57,7 @@ $config = [
 				'fields' => array(
 					'name',
                     'company',
+                    'Category.name',
                     'Media.cover',
                     'display_created'
 				),

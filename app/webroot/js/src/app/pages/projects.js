@@ -8,7 +8,8 @@
         },
 
         init: function () {
-            $('video').on('play', $.proxy(this.mediaPlayed, this));           
+            $('video').on('play', $.proxy(this.mediaPlayed, this));
+            this.initFilters();
         },
 
         mediaPlayed: function (e) {
@@ -18,6 +19,33 @@
             $target.removeClass('stopped');
 
             $('video.stopped').trigger('pause');
+        },
+
+        initFilters: function () {
+            var $filters = $('.btn-filter');
+
+            if (!$filters.length) return;
+
+            $filters.on('click', function () {
+                var filter = $(this).data('filter');
+
+                $filters.removeClass('active');
+                $(this).addClass('active');
+
+                if (filter === 'all') {
+                    $('.project-item').removeClass('project-hidden');
+                } else {
+                    $('.project-item').each(function () {
+                        var category = $(this).data('category').toString();
+                        var match = filter === 'none' ? category === '' : category === filter.toString();
+                        $(this).toggleClass('project-hidden', !match);
+                    });
+                }
+
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            });
         },
     };
 
