@@ -36,8 +36,9 @@
                     $('.project-item').removeClass('project-hidden');
                 } else {
                     $('.project-item').each(function () {
-                        var category = $(this).data('category').toString();
-                        var match = filter === 'none' ? category === '' : category === filter.toString();
+                        var categoryData = $(this).data('category').toString();
+                        var categories = categoryData ? categoryData.split(',') : [];
+                        var match = filter === 'none' ? categories.length === 0 : categories.indexOf(filter.toString()) !== -1;
                         $(this).toggleClass('project-hidden', !match);
                     });
                 }

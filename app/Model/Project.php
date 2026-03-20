@@ -12,8 +12,13 @@ class Project extends AppModel {
 	
 	);
 
-	public $belongsTo = array(
-		'Category'
+	public $hasAndBelongsToMany = array(
+		'Category' => array(
+			'joinTable' => 'categories_projects',
+			'foreignKey' => 'project_id',
+			'associationForeignKey' => 'category_id',
+			'unique' => true
+		)
 	);
 
     public $actsAs = array(

@@ -27,7 +27,10 @@ $this->assign('navItemKey', 'projects');
         <?php endif; ?>
 
         <?php foreach($projects as $key=>$project):?>
-            <div class="row project-item" data-aos="fade-up" data-aos-duration="1000" data-category="<?= !empty($project['Category']['id']) ? $project['Category']['id'] : '' ?>">
+            <?php
+                $projectCategoryIds = !empty($project['Category']) ? implode(',', Hash::extract($project['Category'], '{n}.id')) : '';
+            ?>
+            <div class="row project-item" data-aos="fade-up" data-aos-duration="1000" data-category="<?= $projectCategoryIds ?>">
                 <div class="col-lg-5 col-info order-1 order-lg-0">
                    <div class="info">
                         <div class="name-company text-white mb-2">

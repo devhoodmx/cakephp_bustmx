@@ -17,19 +17,4 @@ class ProjectsController extends AppController
 		}
 	}
 
-	public function admin_edit($id = null, $name = null) {
-		$result = parent::admin_edit($id, $name);
-
-		if (!$this->request->is('post') && !$this->request->is('put')) {
-			$project = $this->Project->find('first', [
-				'conditions' => ['Project.id' => $id],
-				'fields' => ['Project.category_id'],
-				'contain' => false
-			]);
-			$this->request->data['Project']['category_id'] = !empty($project['Project']['category_id']) ? $project['Project']['category_id'] : null;
-		}
-
-		return $result;
-	}
-
 }

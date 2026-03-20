@@ -10,10 +10,8 @@ $config = [
 			'main' => array(
 				'name' => 'text',
 				'company' => 'text',
-				'category_id' => array(
-					'type' => 'select',
-					'label' => 'Categoría',
-					'empty' => 'Sin categoría'
+				'categories' => array(
+					'type' => 'element'
 				),
 				'active' => array(
 					'type' => 'radio',
@@ -33,13 +31,13 @@ $config = [
 				'services' => 'ckeditor',
                 'description' => 'ckeditor',
                 'final_text' => 'ckeditor'
-                
+
 			),
             'aside' => array(
                 'cover' => array(
 					'cover' => 'media'
 				),
-				
+
             ),
 		]
 	],
@@ -57,7 +55,6 @@ $config = [
 				'fields' => array(
 					'name',
                     'company',
-                    'Category.name',
                     'Media.cover',
                     'display_created'
 				),
@@ -82,7 +79,7 @@ $config = [
                         'gallery' => 'media'
                     )
 				],
-				
+
             ]
 		],
 		'admin_delete' => [],

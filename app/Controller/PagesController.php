@@ -220,6 +220,7 @@ class PagesController extends AppController {
 				'conditions' => array(
 					'Project.active' => true,
 				),
+				'recursive' => 1,
 				'order' => 'Project.id ASC',
 			)
 		);
